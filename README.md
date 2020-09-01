@@ -1,2 +1,2 @@
-# education-python
-VSCode Dev Container for Python Education
+# learning-python
+VSCode Dev Container for Learning Python
