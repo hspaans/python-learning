@@ -22,7 +22,7 @@ RUN apt-get update \
     && apt-get -y install --no-install-recommends git iproute2 procps iproute2 lsb-release rcm \
     #
     # Install Ansible and Ansible Lint
-    && pip install pipenv \
+    && pip install --no-cache-dir pipenv \
     #
     # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
     && groupadd --gid "$USER_GID" "$USERNAME" \
