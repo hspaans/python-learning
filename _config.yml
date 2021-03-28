@@ -1,0 +1,35 @@
+---
+title: hspaans.github.io
+google_analytics: UA-185750255-1
+twitter_username: hansspaans
+github_username:  hspaans
+theme: minima
+show_excerpts: false
+minima:
+  skin: dark
+  social:
+    github: hspaans
+
+plugins:
+  - jekyll-feed
+  - jekyll-toc
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .devcontainer/
+  - .github/
+  - .vscode/
+
+branch: master
