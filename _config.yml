@@ -11,11 +11,9 @@ minima:
     github: hspaans
 
 plugins:
-  - jekyll-feed
   - jekyll-toc
   - jekyll-redirect-from
   - jekyll-seo-tag
-  - jekyll-sitemap
 
 exclude:
   - .sass-cache/
