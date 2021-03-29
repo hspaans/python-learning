@@ -131,7 +131,7 @@ if __name__ == "__main__":
 
 Output:
 
-```
+```shell
 Hello Jack.
 Hello John.
 ```
@@ -966,9 +966,674 @@ def main():
     print(alist)
 ```
 
+## Working with Tuples
+
+```python
+def main():
+    mytuple = ("apple", "banana", "cherry", "apple")
+    print(mytuple)
+```
+
+The number of itmem in a tuple
+
+```python
+def main():
+    mytuple = ("apple", "banana", "cherry")
+    print(len(mytuple))
+```
+
+Determining the type
+
+```python
+def main():
+    mytuple = ("apple")
+    print(type(mytuple))
+    mytuple = ("apple",)
+    print(type(mytuple))
+```
+
+Creating a tuple using the constructor
+
+```python
+def main():
+    mytuple = tuple(("apple", "banana", "cherry"))
+    print(mytuple)
+```
+
+Accessing items
+
+```python
+def main():
+    mytuple = ("apple", "banana", "cherry")
+    print(mytuple[1])
+    print(mytuple[:1])
+    print(mytuple[1:])
+    print(mytuple[:-1])
+```
+
+```python
+def main():
+    mytuple = ("apple", "banana", "cherry")
+    if "apple" in mytuple:
+        print("The apple is in mytuple")
+```
+
+Adding an item
+
+```python
+def main():
+    mytuple = ("apple", "banana", "cherry")
+    a = list(mytuple)
+    a.append("cherry")
+    mytuple = tuple(a)
+    print(mytuple)
+```
+
+Updating an item
+
+```python
+def main():
+    mytuple = ("apple", "banana", "cherry")
+    a = list(mytuple)
+    a[1] = "cherry"
+    mytuple = tuple(a)
+    print(mytuple)
+```
+
+Remove an item
+
+```python
+def main():
+    mytuple = ("apple", "banana", "cherry")
+    a = list(mytuple)
+    a.remove("apple")
+    mytuple = tuple(a)
+    print(mytuple)
+```
+
+Unpack a tuple
+
+```python
+def main():
+    mytuple = ("apple", "banana", "cherry")
+    (a, b, c) = mytuple
+    print(a)
+    print(b)
+    print(c)
+```
+
+Unpack a tuple with an asterix
+
+```python
+def main():
+    mytuple = ("apple", "banana", "cherry", "orange", "lemon")
+    (a, b, c*) = mytuple
+    print(a)
+    print(b)
+    print(c)
+    (a, b*, c) = mytuple
+    print(a)
+    print(b)
+    print(c)
+```
+
+Looping through a tuple
+
+```python
+def main():
+    mytuple = ("apple", "banana", "cherry")
+    for a in mytuple:
+        print(a)
+
+    for i in range(len(mytuple)):
+        print(mytuple[i])
+
+    i = 0
+    while i < len(mytuple):
+        print(mytuple[i])
+        i = i + 1
+```
+
+Joining tuples
+
+```python
+def main():
+    mytuple = ("apple", "banana", "cherry")
+    myothertuple = ("orange", "lemon")
+    myfulltuple = mytuple + myothertuple
+    print(myfulltuple)
+```
+
+```python
+def main():
+    mytuple = ("apple", "banana", "cherry")
+    myfulltuple = mytuple * 2
+    print(myfulltuple)
+```
+
 ## Working with Sets
 
+Sets are used to store multiple items in a single variable similar to lists, but doesn't allow for duplicates in the set.
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry", "apple"}
+    print(myset)
+```
+
+The number of items in a set
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    print(len(myset))
+```
+
+Which type is set?
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    print(type(myset))
+```
+
+Using the constructor for sets
+
+```python
+def main():
+    myset = set(("apple", "banana", "cherry"))
+    print(type(myset))
+```
+
+Add an item to a set
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    print(myset)
+    myset.append("peach")
+    print(myset)
+```
+
+Add a set to a set
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    myotherset = {"peach", "strawberry"}
+    print(myset)
+    myset.update(myotherset)
+    print(myset)
+```
+
+Add any iterable to a set
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    myotherset = ["peach", "strawberry"]
+    print(myset)
+    myset.update(myotherset)
+    print(myset)
+```
+
+Removing an existing item from a set
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    myset.remove("banana")
+    print(myset)
+```
+
+Removing an possible existing item from a set
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    myset.discard("peach")
+    print(myset)
+```
+
+Removing the last item from a set
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    myset.pop()
+    print(myset)
+```
+
+Make the set empty
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    myset.clear()
+    print(myset)
+```
+
+Delete a set
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    del myset
+    print(myset)
+```
+
+Looping
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    for a in myset:
+        print(a)
+```
+
+Joining sets with an union
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    myotherset = {"peach", "strawberry"}
+    myfullset = myset.union(myotherset)
+    print(myfullset)
+```
+
+Merging a set into a sets
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    myotherset = {"peach", "strawberry"}
+    myset.update(myotherset)
+    print(myset)
+```
+
+Update a set to keep only duplicates
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    myotherset = {"apple", "peach", "strawberry"}
+    myset.intersection_update(myotherset)
+    print(myset)
+```
+
+Create a set to with only duplicates
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    myotherset = {"apple", "peach", "strawberry"}
+    deltaset = myset.intersection(myotherset)
+    print(deltaset)
+```
+
+Update a set to keep all non-duplicates
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    myotherset = {"apple", "peach", "strawberry"}
+    myset.symmetric_difference_update(myotherset)
+    print(myset)
+```
+
+Create a set to with all non-duplicates
+
+```python
+def main():
+    myset = {"apple", "banana", "cherry"}
+    myotherset = {"apple", "peach", "strawberry"}
+    deleaset = myset.symmetric_difference(myotherset)
+    print(deltaset)
+```
+
+
 ## Working with Dictionaries
+
+Dictionaries are used to store values in key-value pairs. As of Python 3.7 dictionaries are ordered, and earlier Python versions are unordered. Also dictionaries are changable.
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    print(mydict)
+```
+
+Accessing an item
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    print(mydict["john"])
+```
+
+Dictionaries cannot have two items with the same key:
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "jack": "cherry",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    print(mydict)
+```
+
+Determine the amount of items in a dictionary
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    print(len(mydict))
+```
+
+Data type within Python
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    print(type(mydict))
+```
+
+```shell
+<class 'dict'>
+```
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    print(mydict)
+```
+
+Retrieve a value based on the key
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    a = mydict["jonn"]
+    print(a)
+```
+
+Retrieve a value based on the key with the `get()` method.
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    a = mydict.get("jonn")
+    print(a)
+```
+
+Retrieve all the keys
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    b = mydict.keys()
+    print(b)
+```
+
+Updating the dictionary will also update view on list of keys that was retrieved
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    b = mydict.keys()
+    print(b)
+    mydict["jane"] = "cherry"
+    print(b)
+```
+
+Retrieve all the values
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    c = mydict.values()
+    print(c)
+```
+
+Updating the dictionary will also update view on list of values that was retrieved
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    c = mydict.values()
+    print(c)
+    mydict["jim"] = "cherry"
+    mydict["jane"] = "cherry"
+    print(c)
+```
+
+Retrieve all the items
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    d = mydict.items()
+    print(d)
+```
+
+Updating the dictionary will also update view on list of items that was retrieved
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    c = mydict.items()
+    print(c)
+    mydict["jim"] = "cherry"
+    mydict["jane"] = "cherry"
+    print(c)
+```
+
+Check if an item exists
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    if "james" in mydict:
+        print("James exists")
+```
+
+Updating values and if the item doesn't exist the item is created.
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    mydict["jim"] = "cherry"
+    print(mydict)
+    mydict.update({"jim", "apple"})
+    print(mydict)
+```
+
+Removing items
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    mydict.pop("jim")
+    print(mydict)
+    mydict.popitem()
+    print(mydict)
+    del mydict["john"]
+    print(mydict)
+    mydict.clear()
+    print(mydict)
+```
+
+Looping through a dictionary
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    for a in mydict:
+        print(a)
+    for a in mydict:
+        print(mydict[a])
+    for a in mydict.values():
+        print(a)
+    for a in mydict.keys():
+        print(a)
+    for a, b in mydict.items():
+        print(a, b)
+```
+
+Copying a dictionary
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    myotherdict = mydict.copy()
+    print(myotherdict)
+    myotherdict = dict(mydict)
+    print(myotherdict)
+```
+
+Make a reference of a dictionary
+
+```python
+def main():
+    mydict = {
+        "jack": "apple",
+        "john": "banana",
+        "james": "apple"
+        "jim": "banana"
+    }
+    myotherdict = mydict
+    print(mydict)
+    print(myotherdict)
+    myotherdict["jane"] = "cherry"
+    print(mydict)
+    print(myotherdict)
+```
+
+Using nested dictionaries
+
+```python
+def main():
+    mydict = {
+        "jack": {
+            "food": "apple"
+            "drink": "water"
+        },
+        "john": {
+            "food": "banana"
+            "drink": "mildk"
+        }
+    }
+    print(mydict)
+```
+
+```python
+def main():
+    order1 = {
+        "food": "apple"
+        "drink": "water"
+    }
+    order2 = {
+        "food": "banana"
+        "drink": "mildk"
+    }
+    mydict = {
+        "jack": order1,
+        "john": order2
+    }
+    print(mydict)
+```
 
 ## Working with Arrays
 
