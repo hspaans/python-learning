@@ -715,24 +715,24 @@ Lists are used to store multiple items in a single variable.
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    print(alist)
+    mylist = ["apple", "banana", "cherry"]
+    print(mylist)
 ```
 
 Lists can have duplicates and are ordered
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry", "apple", "cherry"]
-    print(alist)
+    mylist = ["apple", "banana", "cherry", "apple", "cherry"]
+    print(mylist)
 ```
 
 List length `len()`
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    print(len(alist))
+    mylist = ["apple", "banana", "cherry"]
+    print(len(mylist))
 ```
 
 A lists can contain different data types
@@ -766,16 +766,16 @@ Uusing the list() constructor
 
 ```python
 def main():
-    alist = list(("apple", "banana", "cherry"))
-    print(alist)
+    mylist = list(("apple", "banana", "cherry"))
+    print(mylist)
 ```
 
 List items can directly be addressed
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    print(alist[1])
+    mylist = ["apple", "banana", "cherry"]
+    print(mylist[1])
 ```
 
 Output:
@@ -786,8 +786,8 @@ banana
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    print(alist[-1])
+    mylist = ["apple", "banana", "cherry"]
+    print(mylist[-1])
 ```
 
 Output:
@@ -800,37 +800,37 @@ Indexes
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
-    print(alist[2:5])
+    mylist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+    print(mylist[2:5])
 ```
 
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
-    print(alist[:4])
+    mylist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+    print(mylist[:4])
 ```
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
-    print(alist[2:])
+    mylist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+    print(mylist[2:])
 ```
 
 Negative indexes
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
-    print(alist[-4:-1])
+    mylist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+    print(mylist[-4:-1])
 ```
 
 Check if item exists
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    if "apple" in alist:
+    mylist = ["apple", "banana", "cherry"]
+    if "apple" in mylist:
         print("Yes, 'apple' is in the fruits list")
 ```
 
@@ -838,132 +838,132 @@ Changing an item
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    alist[1] = "blackcurrant"
-    print(alist)
+    mylist = ["apple", "banana", "cherry"]
+    mylist[1] = "blackcurrant"
+    print(mylist)
 ```
 
 Changing a range of items
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
-    alist[1:3] = ["blackcurrant", "watermelon"]
-    print(alist)
+    mylist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+    mylist[1:3] = ["blackcurrant", "watermelon"]
+    print(mylist)
 ```
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
-    alist[1:2] = ["blackcurrant", "watermelon"]
-    print(alist)
+    mylist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+    mylist[1:2] = ["blackcurrant", "watermelon"]
+    print(mylist)
 ```
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    alist[1:3] = ["watermelon"]
-    print(alist)
+    mylist = ["apple", "banana", "cherry"]
+    mylist[1:3] = ["watermelon"]
+    print(mylist)
 ```
 
 Append an item
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    alist.append("orange")
-    print(alist)
+    mylist = ["apple", "banana", "cherry"]
+    mylist.append("orange")
+    print(mylist)
 ```
 
 Insert items
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    alist.insert(2, "watermelon")
-    print(alist)
+    mylist = ["apple", "banana", "cherry"]
+    mylist.insert(2, "watermelon")
+    print(mylist)
 ```
 
 Extending a list
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
+    mylist = ["apple", "banana", "cherry"]
     tropical = ["mango", "pineapple", "papaya"]
-    alist.extend(tropical)
-    print(alist)
+    mylist.extend(tropical)
+    print(mylist)
 ```
 
 Adding
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    thistuple = ("kiwi", "orange")
-    alist.extend(thistuple)
-    print(alist)
+    mylist = ["apple", "banana", "cherry"]
+    mytuple = ("kiwi", "orange")
+    mylist.extend(mytuple)
+    print(mylist)
 ```
 
 Remove a specified item
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    alist.remove("banana")
-    print(alist)
+    mylist = ["apple", "banana", "cherry"]
+    mylist.remove("banana")
+    print(mylist)
 ```
 
 Remove a specified index item
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    alist.pop(1)
-    print(alist)
+    mylist = ["apple", "banana", "cherry"]
+    mylist.pop(1)
+    print(mylist)
 ```
 
 Remove the last item
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    alist.pop()
-    print(alist)
+    mylist = ["apple", "banana", "cherry"]
+    mylist.pop()
+    print(mylist)
 ```
 
 Remove the first item
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    del alist[0]
-    print(alist)
+    mylist = ["apple", "banana", "cherry"]
+    del mylist[0]
+    print(mylist)
 ```
 
 Delete the entire list
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    del alist
+    mylist = ["apple", "banana", "cherry"]
+    del mylist
 ```
 
 Clear the list
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    alist.clear()
-    print(alist)
+    mylist = ["apple", "banana", "cherry"]
+    mylist.clear()
+    print(mylist)
 ```
 
 Sort the list
 
 ```python
 def main():
-    alist = ["apple", "banana", "cherry"]
-    alist.sort()
-    print(alist)
+    mylist = ["apple", "banana", "cherry"]
+    mylist.sort()
+    print(mylist)
 ```
 
 ## Working with Tuples
@@ -1010,6 +1010,8 @@ def main():
     print(mytuple[1:])
     print(mytuple[:-1])
 ```
+
+Check if an item exist in a tuple
 
 ```python
 def main():
@@ -1636,6 +1638,57 @@ def main():
 ```
 
 ## Working with Arrays
+
+```python
+def main():
+    myarray = ["apple", "banana", "cherry"]
+    print(myarray)
+```
+
+List length `len()`
+
+```python
+def main():
+    myarray = ["apple", "banana", "cherry"]
+    print(len(myarray))
+```
+
+Looping an array
+
+```python
+def main():
+    myarray = ["apple", "banana", "cherry"]
+    for a in myarray:
+        print(a)
+```
+
+Adding an element
+
+```python
+def main():
+    myarray = ["apple", "banana", "cherry"]
+    myarray.append("kiwi")
+    print(myarray)
+```
+
+Remove the first occurrence of an element
+
+```python
+def main():
+    myarray = ["apple", "banana", "cherry", "apple"]
+    myarray.remove("apple")
+    print(myarray)
+```
+
+Remove an element of a position
+
+```python
+def main():
+    myarray = ["apple", "banana", "cherry"]
+    myarray.pop(1)
+    print(myarray)
+```
+
 
 ## Functions
 
