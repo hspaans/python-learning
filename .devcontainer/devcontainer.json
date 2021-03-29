@@ -1,28 +1,20 @@
 {
-	"name": "Python Education",
-
-	"build": {
-		"dockerfile": "Dockerfile",
-		"context": "..",
-		"args": {
-			"PYTHON": "3.8"
-		}
-	},
-
-	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash"
-	},
-
-	"appPort": [],
-
-	"postCreateCommand": "",
-
-	"remoteUser": "vscode",
-
-	"extensions": [
+  "image": "ghcr.io/hspaans/python-devcontainer:3.9",
+  "name": "Python",
+  "containerEnv": {
+    "PIPENV_VENV_IN_PROJECT": "1"
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "appPort": [],
+  "postCreateCommand": "pipenv update",
+  "remoteUser": "vscode",
+  "extensions": [
+    "davidanson.vscode-markdownlint",
+    "editorconfig.editorconfig",
     "github.vscode-pull-request-github",
-		"ms-python.python",
-		"redhat.vscode-yaml",
-    "yzhang.markdown-all-in-one"
-	]
+    "ms-python.python",
+    "redhat.vscode-yaml"
+  ]
 }
