@@ -21,7 +21,7 @@ Learning Python can be done on any system with a text-editor and the Python inte
 
 * Install Git on [Windows][git-win]
 * [Setup VSCode](https://code.visualstudio.com/docs/setup/setup-overview)
-* [Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)
+* [Developing inside a Container][vscode-containers]
 
 When you have everything working correctly then [python-template][python-template] repository should start a Python based development container. In the terminal window within VSCode we can start Python manually as below
 
@@ -37,8 +37,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 * Install Git on [Windows][git-win]
 * [Setup VSCode](https://code.visualstudio.com/docs/setup/setup-overview)
-* [Developing in WSL](https://code.visualstudio.com/docs/remote/wsl)
+* [Developing in WSL][vscode-wsl]
 
+<!--nextpage-->
 ## Your first Python application
 
 Let start directly with the famous `Hello World` application in the Python shell. The Python shell can be used for very short applications like to run `print("Hello World")`.
@@ -87,7 +88,7 @@ $ hello.py
 Hello World
 ```
 
-But what does this all mean? Let start with the first line where tell unix via a [shebang](https://en.m.wikipedia.org/wiki/Shebang_(Unix)) to look the `python3` interpreter via the `env` command. This guarantees that we always find the Python interpreter while we don't set any hardcoded paths. In the [PIP](pip) section we will go deeping into why this important when we start working with virtual environments.
+But what does this all mean? Let start with the first line where tell unix via a [shebang][shebang] to look the `python3` interpreter via the `env` command. This guarantees that we always find the Python interpreter while we don't set any hardcoded paths. In the [PIP](pip) section we will go deeping into why this important when we start working with virtual environments.
 
 ```python
 #!/usr/bin/env python3
@@ -109,6 +110,7 @@ if __name__ == "__main__":
 
 > Most examples will be based on this example and the `main` function will be modified.
 
+<!--nextpage-->
 ## Python syntax
 
 ### Indentation
@@ -154,7 +156,7 @@ if __name__ == "__main__":
 
 Output:
 
-```
+```shell
   File "/workspaces/python-examples/hello.py", line 7
     print("Hello Jack.")
                         ^
@@ -181,7 +183,7 @@ if __name__ == "__main__":
 
 Output:
 
-```
+```shell
 Hello John.
 ```
 
@@ -204,7 +206,7 @@ if __name__ == "__main__":
 
 Output:
 
-```
+```shell
 Hello John.
 ```
 
@@ -229,15 +231,16 @@ if __name__ == "__main__":
 
 Output:
 
-```
+```shell
 Hello John.
 ```
 
+<!--nextpage-->
 ## Working with variables
 
 No programs works without variables to store data values in while the program runs. Variables in Python are strong dynamically typed which mean you can change a variable from a number to a string by assignment, but a variable will not become a number when a string contains a number for example. This also means you may have to cast variable from a number to a string in some cases or vice versa.
 
-### The basics
+### The basics about variables
 
 Let start with basic example based on our `Hello World.` application where we have two lines. And in this example we still present print directly with a string telling about two people called John and their age.
 
@@ -249,7 +252,7 @@ def main():
 
 Output:
 
-```
+```shell
 My name is John and I am 42.
 My name is John and I am also 42
 ```
@@ -266,7 +269,7 @@ def main():
 
 Output:
 
-```
+```shell
 My name is John and I am 42.
 My name is John and I am also 42
 ```
@@ -282,7 +285,7 @@ def main():
 
 Output:
 
-```
+```shell
 My name is John and I am 42.
 My name is Jack and I am also 42
 ```
@@ -314,7 +317,7 @@ def main():
 
 Output:
 
-```
+```shell
 Traceback (most recent call last):
   File "/workspaces/python-examples/v03.py", line 10, in <module>
     main()
@@ -346,7 +349,7 @@ def main():
 
 Output:
 
-```
+```shell
 <class 'str'>
 <class 'int'>
 ```
@@ -370,7 +373,7 @@ if __name__ == "__main__":
 
 Output:
 
-```
+```shell
 Hello World.
 ```
 
@@ -392,7 +395,7 @@ if __name__ == "__main__":
 
 Output:
 
-```
+```shell
 Hello People.
 ```
 
@@ -419,15 +422,16 @@ if __name__ == "__main__":
 
 Output:
 
-```
+```shell
 Hello People.
 ```
 
 > Using global variables is considert bad programming and a risk as it can have unforeseen effects.
 
+<!--nextpage-->
 ## Working with strings
 
-### The basics
+### The basics about strings
 
 The most basic form of a string is one that is given directly to the `print()`
 
@@ -438,7 +442,7 @@ def main:
 
 Output:
 
-```
+```shell
 Hello World.
 ```
 
@@ -450,7 +454,7 @@ def main:
 
 Output:
 
-```
+```shell
 Hello World.
 ```
 
@@ -463,7 +467,7 @@ def main:
 
 Output:
 
-```
+```shel
 Hello World.And Goodbye.
 ```
 
@@ -476,7 +480,7 @@ def main:
 
 Output:
 
-```
+```shell
 Hello World. And Goodbye.
 ```
 
@@ -489,7 +493,7 @@ def main:
 
 Output:
 
-```
+```shell
 Hello World.
 And Goodbye.
 ```
@@ -584,7 +588,6 @@ def main:
 
 #### Removing a whitespace
 
-
 ```python
 def main:
     phrase_one = "Hello World. "
@@ -662,13 +665,14 @@ def main:
 | \ooo  | Octal value     |
 | \xhh  | Hex value       |
 
+<!--nextpage-->
 ## Working with numbers
 
 * `int`
 * `float`
 * `complex`
 
-### The basics
+### The basics about numbers
 
 ```python
 def main:
@@ -682,7 +686,7 @@ def main:
     print(type(z))
 ```
 
-```
+```shell
 <class 'int'>
 <class 'int'>
 <class 'float'>
@@ -709,7 +713,10 @@ def main:
     print(type(b))
 ```
 
-## Working with Lists
+<!--nextpage-->
+## Python Collections
+
+### Working with Lists
 
 Lists are used to store multiple items in a single variable.
 
@@ -758,7 +765,7 @@ def main():
     print(type(mylist))
 ```
 
-```
+```shell
 <class 'list'>
 ```
 
@@ -780,7 +787,7 @@ def main():
 
 Output:
 
-```
+```shell
 banana
 ```
 
@@ -792,7 +799,7 @@ def main():
 
 Output:
 
-```
+```shell
 cherry
 ```
 
@@ -803,7 +810,6 @@ def main():
     mylist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
     print(mylist[2:5])
 ```
-
 
 ```python
 def main():
@@ -966,7 +972,7 @@ def main():
     print(mylist)
 ```
 
-## Working with Tuples
+### Working with Tuples
 
 ```python
 def main():
@@ -1113,7 +1119,7 @@ def main():
     print(myfulltuple)
 ```
 
-## Working with Sets
+### Working with Sets
 
 Sets are used to store multiple items in a single variable similar to lists, but doesn't allow for duplicates in the set.
 
@@ -1293,8 +1299,7 @@ def main():
     print(deltaset)
 ```
 
-
-## Working with Dictionaries
+### Working with Dictionaries
 
 Dictionaries are used to store values in key-value pairs. As of Python 3.7 dictionaries are ordered, and earlier Python versions are unordered. Also dictionaries are changable.
 
@@ -1637,7 +1642,7 @@ def main():
     print(mydict)
 ```
 
-## Working with Arrays
+### Working with Arrays
 
 ```python
 def main():
@@ -1689,7 +1694,7 @@ def main():
     print(myarray)
 ```
 
-
+<!--nextpage-->
 ## Functions
 
 ### Generate a random number
@@ -1712,6 +1717,7 @@ def main:
     print(abs(-1))
 ```
 
+<!--nextpage-->
 ## Conditions
 
 Python supports the usual logical conditions from mathematics:
@@ -1834,7 +1840,7 @@ b = 330
 print("A") if a > b else print("=") if a == b else print("B")
 ```
 
-## Functions
+## Using Functions
 
 ```python
 def my_function():
@@ -1884,6 +1890,7 @@ def main():
     my_function("Brazil")
 ```
 
+<!--nextpage-->
 ## Loops
 
 ### While loop
@@ -2072,7 +2079,7 @@ def main():
     f = open("demofile.txt", "r")
     print(f.readline())
 ```
- 
+
 ```python
 def main():
     f = open("demofile.txt", "r")
@@ -2207,7 +2214,7 @@ def main():
 
 Output:
 
-```
+```shell
 42
 ```
 
@@ -2221,7 +2228,6 @@ from mymodule import person
 def main():
     print(person["age"])
 ```
-
 
 ### Rename a module
 
@@ -2252,7 +2258,6 @@ def main():
     x = dir(platform)
     print(x)
 ```
-
 
 ## Classes
 
@@ -2401,9 +2406,10 @@ First we create virtual environment
 
 ```shell
 $ python3 -m venv .venv
+$
 ```
 
-To activate the 
+To activate the
 
 ```shell
 $ source .venv/bin/activate
@@ -2524,9 +2530,12 @@ Successfully installed camelcase-0.2
 [python-devcontainer]: https://github.com/hspaans/python-devcontainer
 [python-template]: https://github.com/hspaans/python-template
 [vscode]: https://code.visualstudio.com
+[vscode-containers]: https://code.visualstudio.com/docs/remote/containers
+[vscode-wsl]: https://code.visualstudio.com/docs/remote/wsl
 [git-win]: https://git-scm.com/download/win
 [PCAP]: https://pythoninstitute.org/certification/pcap-certification-associate/
 [PCEP]: https://pythoninstitute.org/certification/pcep-certification-entry-level/
 [Python]: https://www.python.org/
 [PCPP]: https://pythoninstitute.org/certification/pcpp-certification-professional/
 [arguments]: https://www.python.org/dev/peps/pep-0008/#function-and-method-arguments
+[shebang]: https://en.m.wikipedia.org/wiki/Shebang_(Unix)
