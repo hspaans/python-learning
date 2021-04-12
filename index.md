@@ -716,7 +716,14 @@ def main:
 <!--nextpage-->
 ## Python Collections
 
-### Working with Lists
+There are four collection data types in the Python programming language:
+
+* **List** is a collection which is ordered and changeable. Allows duplicate members
+* **Tuple** is a collection which is ordered and unchangeable. Allows duplicate members.
+* **Set** is a collection which is unordered and unindexed. No duplicate members.
+* **Dictionary** is a collection which is ordered* and changeable. No duplicate members.
+
+### Lists
 
 Lists are used to store multiple items in a single variable.
 
@@ -724,6 +731,12 @@ Lists are used to store multiple items in a single variable.
 def main():
     mylist = ["apple", "banana", "cherry"]
     print(mylist)
+```
+
+Output
+
+```shell
+['apple', 'banana', 'cherry']
 ```
 
 Lists can have duplicates and are ordered
@@ -746,15 +759,15 @@ A lists can contain different data types
 
 ```python
 def main():
-    list1 = ["apple", "banana", "cherry"]
-    list2 = [1, 5, 7, 9, 3]
-    list3 = [True, False, False]
-    list4 = ["abc", 34, True, 40, "male"]
+    mylist1 = ["apple", "banana", "cherry"]
+    mylist2 = [1, 5, 7, 9, 3]
+    mylist3 = [True, False, False]
+    mylist4 = ["abc", 34, True, 40, "male"]
 
-    print(list1)
-    print(list2)
-    print(list3)
-    print(list4)
+    print(mylist1)
+    print(mylist2)
+    print(mylist3)
+    print(mylist4)
 ```
 
 Using the type() function
@@ -972,12 +985,20 @@ def main():
     print(mylist)
 ```
 
-### Working with Tuples
+### Tuples
+
+Tuples are used to store multiple items in a single variable, and are ordered, allow duplicates
 
 ```python
 def main():
     mytuple = ("apple", "banana", "cherry", "apple")
     print(mytuple)
+```
+
+Output
+
+```shell
+('apple', 'banana', 'cherry', 'apple')
 ```
 
 The number of itmem in a tuple
@@ -988,7 +1009,13 @@ def main():
     print(len(mytuple))
 ```
 
-Determining the type
+Output
+
+```shell
+4
+```
+
+#### Determining the type
 
 ```python
 def main():
@@ -998,12 +1025,23 @@ def main():
     print(type(mytuple))
 ```
 
+Output
+
+```shell
+<class 'str'>
+<class 'tuple'>
+```
+
 Creating a tuple using the constructor
 
 ```python
 def main():
     mytuple = tuple(("apple", "banana", "cherry"))
     print(mytuple)
+```
+
+```shell
+('apple', 'banana', 'cherry')
 ```
 
 Accessing items
@@ -1119,7 +1157,7 @@ def main():
     print(myfulltuple)
 ```
 
-### Working with Sets
+### Sets
 
 Sets are used to store multiple items in a single variable similar to lists, but doesn't allow for duplicates in the set.
 
@@ -1299,7 +1337,7 @@ def main():
     print(deltaset)
 ```
 
-### Working with Dictionaries
+### Dictionaries
 
 Dictionaries are used to store values in key-value pairs. As of Python 3.7 dictionaries are ordered, and earlier Python versions are unordered. Also dictionaries are changable.
 
@@ -1642,7 +1680,7 @@ def main():
     print(mydict)
 ```
 
-### Working with Arrays
+### Arrays
 
 ```python
 def main():
@@ -2170,6 +2208,7 @@ def main():
     os.rmdir("demodir")
 ```
 
+<!--nextpage-->
 ## Modules
 
 ### Using a module
@@ -2396,6 +2435,7 @@ engineer1 = Engineer("John", 42, "Electronics")
 engineer1.myfunc()
 ```
 
+<!--nextpage-->
 ## PIP: Using packages and virtual environments
 
 PIP is a package manager for Python for packages or modules
