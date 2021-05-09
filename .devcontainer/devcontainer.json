@@ -39,7 +39,8 @@
     "github.vscode-pull-request-github",
     "ms-python.python",
     "ms-python.vscode-pylance",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "yzhang.markdown-all-in-one"
   ],
   "forwardPorts": [],
   "postCreateCommand": "pip3 install --user -r requirements.txt -r requirements_dev.txt",
