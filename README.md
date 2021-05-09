@@ -1,2 +1,3 @@
 # learning-python
-VSCode Dev Container for Learning Python
+
+[Learning Python](https://hspaans.github.io/learning-python/)

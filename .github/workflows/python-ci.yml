@@ -3,15 +3,10 @@ name: Lint Code Base
 
 on:
   pull_request:
-  push:
-    branches:
-      - master
 
 jobs:
   build:
-    # Name the Job
     name: Lint Code Base
-    # Set the agent to run on
     runs-on: ubuntu-latest
 
     steps:
@@ -21,9 +16,9 @@ jobs:
       - name: Copy linter settings
         run: |
           mkdir .github/linters
-          cp .markdownlint.json .github/linters/
+          cp .markdown-lint.yml .github/linters/
 
       - name: Lint Code Base
-        uses: github/super-linter@v3.16.2
+        uses: github/super-linter@v3.17.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

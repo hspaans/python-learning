@@ -1,0 +1,8 @@
+---
+repository:
+  description: Learning Python
+  homepage: https://hspaans.github.io/learning-python/
+  topics: python, pcap, pcep, learning-python, educational-resources
+  delete_branch_on_merge: true
+  has_wiki: false
+  private: false
