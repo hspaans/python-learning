@@ -94,9 +94,9 @@ The Python Institute also has a certification traject with three levels called [
 
 Learning Python can be done on any system with a text-editor and the Python interpreter. But it is advised to an editor like [Visual Studio Code][vscode] to help you develop your code. Also, VSCode can help you by spinning up a [Python development container][python-devcontainer] in Docker to make sure everything installed and configured correctly everytime.
 
-* Install Git on [Windows][git-win]
-* [Setup VSCode](https://code.visualstudio.com/docs/setup/setup-overview)
-* [Developing inside a Container][vscode-containers]
+- Install Git on [Windows][git-win]
+- [Setup VSCode](https://code.visualstudio.com/docs/setup/setup-overview)
+- [Developing inside a Container][vscode-containers]
 
 When you have everything working correctly then [python-template][python-template] repository should start a Python based development container. In the terminal window within VSCode we can start Python manually as below
 
@@ -110,9 +110,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ### 2.2. Using WSL2
 
-* Install Git on [Windows][git-win]
-* [Setup VSCode](https://code.visualstudio.com/docs/setup/setup-overview)
-* [Developing in WSL][vscode-wsl]
+- Install Git on [Windows][git-win]
+- [Setup VSCode](https://code.visualstudio.com/docs/setup/setup-overview)
+- [Developing in WSL][vscode-wsl]
 
 <!--nextpage-->
 ## 3. Your first Python application
@@ -743,9 +743,9 @@ def main:
 <!--nextpage-->
 ## 7. Working with numbers
 
-* `int`
-* `float`
-* `complex`
+- `int`
+- `float`
+- `complex`
 
 ### 7.1. The basics about numbers
 
@@ -793,10 +793,10 @@ def main:
 
 There are four collection data types in the Python programming language:
 
-* **List** is a collection which is ordered and changeable. Allows duplicate members
-* **Tuple** is a collection which is ordered and unchangeable. Allows duplicate members.
-* **Set** is a collection which is unordered and unindexed. No duplicate members.
-* **Dictionary** is a collection which is ordered* and changeable. No duplicate members.
+- **List** is a collection which is ordered and changeable. Allows duplicate members
+- **Tuple** is a collection which is ordered and unchangeable. Allows duplicate members.
+- **Set** is a collection which is unordered and unindexed. No duplicate members.
+- **Dictionary** is a collection which is ordered* and changeable. No duplicate members.
 
 ### 8.1. Lists
 
@@ -1835,12 +1835,12 @@ def main:
 
 Python supports the usual logical conditions from mathematics:
 
-* Equals: `a == b`
-* Not Equals: `a != b`
-* Less than: `a < b`
-* Less than or equal to: `a <= b`
-* Greater than: `a > b`
-* Greater than or equal to: `a >= b`
+- Equals: `a == b`
+- Not Equals: `a != b`
+- Less than: `a < b`
+- Less than or equal to: `a <= b`
+- Greater than: `a > b`
+- Greater than or equal to: `a >= b`
 
 ```python
 a = 33
@@ -2127,8 +2127,8 @@ def main():
 
 ## 13. User Input
 
-* Python 3.6 uses the `input()` method.
-* Python 2.7 uses the `raw_input()` method
+- Python 3.6 uses the `input()` method.
+- Python 2.7 uses the `raw_input()` method
 
 ```python
 def main():
