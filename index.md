@@ -4,18 +4,93 @@ title: Learning Python
 toc: true
 ---
 
-* TOC
-{:toc}
+- [1. Introduction](#1-introduction)
+- [2. Setting up the environment](#2-setting-up-the-environment)
+  - [2.1. Using devcontainers](#21-using-devcontainers)
+  - [2.2. Using WSL2](#22-using-wsl2)
+- [3. Your first Python application](#3-your-first-python-application)
+- [4. Python syntax](#4-python-syntax)
+  - [4.1. Indentation](#41-indentation)
+  - [4.2. Comments](#42-comments)
+- [5. Working with variables](#5-working-with-variables)
+  - [5.1. The basics about variables](#51-the-basics-about-variables)
+  - [5.2. Different data types](#52-different-data-types)
+  - [5.3. Casting variables](#53-casting-variables)
+  - [5.4. Getting a variable type](#54-getting-a-variable-type)
+  - [5.5. Variable scope](#55-variable-scope)
+- [6. Working with strings](#6-working-with-strings)
+  - [6.1. The basics about strings](#61-the-basics-about-strings)
+  - [6.2. Strings are arrays](#62-strings-are-arrays)
+  - [6.3. Looping through a string](#63-looping-through-a-string)
+  - [6.4. String length](#64-string-length)
+  - [6.5. Checking a string](#65-checking-a-string)
+  - [6.6. Slicing strings](#66-slicing-strings)
+  - [6.7. Modifying strings](#67-modifying-strings)
+    - [6.7.1. Convert your string to upper or lower case](#671-convert-your-string-to-upper-or-lower-case)
+    - [6.7.2. Removing a whitespace](#672-removing-a-whitespace)
+    - [6.7.3. Replacing a string](#673-replacing-a-string)
+    - [6.7.4. Split a string](#674-split-a-string)
+  - [6.8. Formatting strings](#68-formatting-strings)
+  - [6.9. Escape characters](#69-escape-characters)
+- [7. Working with numbers](#7-working-with-numbers)
+  - [7.1. The basics about numbers](#71-the-basics-about-numbers)
+  - [7.2. Type conversion](#72-type-conversion)
+- [8. Python Collections](#8-python-collections)
+  - [8.1. Lists](#81-lists)
+  - [8.2. Tuples](#82-tuples)
+    - [8.2.1. Determining the type](#821-determining-the-type)
+  - [8.3. Sets](#83-sets)
+  - [8.4. Dictionaries](#84-dictionaries)
+  - [8.5. Arrays](#85-arrays)
+- [9. Functions](#9-functions)
+  - [9.1. Generate a random number](#91-generate-a-random-number)
+  - [9.2. Absolute value](#92-absolute-value)
+- [10. Conditions](#10-conditions)
+  - [10.1. if-then-elif](#101-if-then-elif)
+  - [10.2. if-then-else](#102-if-then-else)
+  - [10.3. Nested if-then-else](#103-nested-if-then-else)
+  - [10.4. Logical operators](#104-logical-operators)
+  - [10.5. Shorthand and Conditional Expressions](#105-shorthand-and-conditional-expressions)
+- [11. Using Functions](#11-using-functions)
+- [12. Loops](#12-loops)
+  - [12.1. While loop](#121-while-loop)
+  - [12.2. For loop](#122-for-loop)
+- [13. User Input](#13-user-input)
+- [14. Exception handling](#14-exception-handling)
+- [15. Working with Files](#15-working-with-files)
+  - [15.1. Syntax](#151-syntax)
+  - [15.2. Reading files](#152-reading-files)
+  - [15.3. Closing](#153-closing)
+  - [15.4. Writing files](#154-writing-files)
+  - [15.5. Create a new file](#155-create-a-new-file)
+  - [15.6. Delete a file or folder](#156-delete-a-file-or-folder)
+- [16. Modules](#16-modules)
+  - [16.1. Using a module](#161-using-a-module)
+  - [16.2. Using variable in modules](#162-using-variable-in-modules)
+  - [16.3. Import from a module](#163-import-from-a-module)
+  - [16.4. Rename a module](#164-rename-a-module)
+  - [16.5. Built-in modules](#165-built-in-modules)
+- [17. Classes](#17-classes)
+  - [17.1. Creating a class and object](#171-creating-a-class-and-object)
+  - [17.2. The constructor method](#172-the-constructor-method)
+  - [17.3. Define an object method](#173-define-an-object-method)
+  - [17.4. The self parameter](#174-the-self-parameter)
+  - [17.5. Object actions](#175-object-actions)
+  - [17.6. Inheritance](#176-inheritance)
+- [18. PIP: Using packages and virtual environments](#18-pip-using-packages-and-virtual-environments)
+  - [18.1. Create and start the virtual environment](#181-create-and-start-the-virtual-environment)
+  - [18.2. Managing packages with pip](#182-managing-packages-with-pip)
+  - [18.3. Install all dependencies](#183-install-all-dependencies)
 
-## Introduction
+## 1. Introduction
 
-[Python][Python] is a language specification with multiple implementations like CPython, Jython, and MicroPython, but almost everyone refers to the CPython implementation as Python that can be found on almost every Linux server. The MicroPython implementation is to run Python on microcontrollers. Jython is the last big implementation of Python 2 that runs on the Java Virtual Machine, but development has mostly stalled, but development for Python 3.8 support has recently started.
+[Python][Python] is a language specification with multiple implementations like CPython, Jython, and MicroPython, but almost everyone refers to the CPython implementation as Python that can be found on almost every Linux server. The MicroPython implementation is to run Python on microcontrollers. Jython is the last big implementation of Python 2 that runs on the Java Virtual Machine, but development for Python 3.8 support has recently started.
 
 The Python Institute also has a certification traject with three levels called [PCEP], [PCAP], and [PCPP]. As the PCAP exam also covers the PCEP objectives most people directly take this exam. The PCPP covers the Python ecosystem part and more advantage architecture patterns.
 
-## Setting up the environment
+## 2. Setting up the environment
 
-### Using devcontainers
+### 2.1. Using devcontainers
 
 Learning Python can be done on any system with a text-editor and the Python interpreter. But it is advised to an editor like [Visual Studio Code][vscode] to help you develop your code. Also, VSCode can help you by spinning up a [Python development container][python-devcontainer] in Docker to make sure everything installed and configured correctly everytime.
 
@@ -33,14 +108,14 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-### Using WSL2
+### 2.2. Using WSL2
 
 * Install Git on [Windows][git-win]
 * [Setup VSCode](https://code.visualstudio.com/docs/setup/setup-overview)
 * [Developing in WSL][vscode-wsl]
 
 <!--nextpage-->
-## Your first Python application
+## 3. Your first Python application
 
 Let start directly with the famous `Hello World` application in the Python shell. The Python shell can be used for very short applications like to run `print("Hello World")`.
 
@@ -111,9 +186,9 @@ if __name__ == "__main__":
 > Most examples will be based on this example and the `main` function will be modified.
 
 <!--nextpage-->
-## Python syntax
+## 4. Python syntax
 
-### Indentation
+### 4.1. Indentation
 
 Python depends on indentation to follow the correct flow of execution. In the example below we see that there is a possible error as `Hello Jack.` is being printed before anything else. Many will assume it will be printed after `Hello John.` as it is directly after it, but indentation wise it isn't part of the `main` function.
 
@@ -163,7 +238,7 @@ Output:
 IndentationError: unindent does not match any outer indentation level
 ```
 
-### Comments
+### 4.2. Comments
 
 Any line that starts with `#` will be ignored by Python.
 
@@ -236,11 +311,11 @@ Hello John.
 ```
 
 <!--nextpage-->
-## Working with variables
+## 5. Working with variables
 
 No programs works without variables to store data values in while the program runs. Variables in Python are strong dynamically typed which mean you can change a variable from a number to a string by assignment, but a variable will not become a number when a string contains a number for example. This also means you may have to cast variable from a number to a string in some cases or vice versa.
 
-### The basics about variables
+### 5.1. The basics about variables
 
 Let start with basic example based on our `Hello World.` application where we have two lines. And in this example we still present print directly with a string telling about two people called John and their age.
 
@@ -290,7 +365,7 @@ My name is John and I am 42.
 My name is Jack and I am also 42
 ```
 
-### Different data types
+### 5.2. Different data types
 
 Python has the following data types built-in by default, in these categories:
 
@@ -304,7 +379,7 @@ Python has the following data types built-in by default, in these categories:
 | Boolean Type:   | bool                         |
 | Binary Types:   | bytes, bytearray, memoryview |
 
-### Casting variables
+### 5.3. Casting variables
 
 Python is flexible with its data types for variables, but Python does require type casting in some cases. Using a variable that contains a number that needs to concatenated with a string needs to be casted from an integer to a string. In the example below we forget to type cast a string and it fails.
 
@@ -335,7 +410,7 @@ def main():
     print("My name is " + name + " and I am " + str(age) + ".")
 ```
 
-### Getting a variable type
+### 5.4. Getting a variable type
 
 Python can also determine the data type of a variable with `type()`. This can become useful when importing data from unknown source and needs validation.
 
@@ -354,7 +429,7 @@ Output:
 <class 'int'>
 ```
 
-### Variable scope
+### 5.5. Variable scope
 
 Variables are scope sensitive and in the example below we define the variable on a global level and can be read scopes of functions and methods. Having global variables isn't a good idea as it leads to messy programming. For constants this is fine, but the variables should only be read from and not updated.
 
@@ -429,9 +504,9 @@ Hello People.
 > Using global variables is considert bad programming and a risk as it can have unforeseen effects.
 
 <!--nextpage-->
-## Working with strings
+## 6. Working with strings
 
-### The basics about strings
+### 6.1. The basics about strings
 
 The most basic form of a string is one that is given directly to the `print()`
 
@@ -498,7 +573,7 @@ Hello World.
 And Goodbye.
 ```
 
-### Strings are arrays
+### 6.2. Strings are arrays
 
 ```python
 def main:
@@ -506,7 +581,7 @@ def main:
     print(phrase_one[1])
 ```
 
-### Looping through a string
+### 6.3. Looping through a string
 
 ```python
 def main:
@@ -514,7 +589,7 @@ def main:
         print(x)
 ```
 
-### String length
+### 6.4. String length
 
 ```python
 def main:
@@ -522,7 +597,7 @@ def main:
     print(len(phrase_one))
 ```
 
-### Checking a string
+### 6.5. Checking a string
 
 ```python
 def main:
@@ -544,7 +619,7 @@ def main:
         print("Yes, Hello World.")
 ```
 
-### Slicing strings
+### 6.6. Slicing strings
 
 ```python
 def main:
@@ -570,9 +645,9 @@ def main:
     print(phrase_one[-5:-2])
 ```
 
-### Modifying strings
+### 6.7. Modifying strings
 
-#### Convert your string to upper or lower case
+#### 6.7.1. Convert your string to upper or lower case
 
 ```python
 def main:
@@ -586,7 +661,7 @@ def main:
     print(phrase_one.lower())
 ```
 
-#### Removing a whitespace
+#### 6.7.2. Removing a whitespace
 
 ```python
 def main:
@@ -596,7 +671,7 @@ def main:
 
 `lstrip` and `rstrip`
 
-#### Replacing a string
+#### 6.7.3. Replacing a string
 
 ```python
 def main:
@@ -604,7 +679,7 @@ def main:
     print(phrase_one.replace("W", "w"))
 ```
 
-#### Split a string
+#### 6.7.4. Split a string
 
 ```python
 def main:
@@ -614,7 +689,7 @@ def main:
 
 `join`
 
-### Formatting strings
+### 6.8. Formatting strings
 
 ```python
 def main:
@@ -639,7 +714,7 @@ def main:
     print(phrase_one.format(name_one, name_two))
 ```
 
-### Escape characters
+### 6.9. Escape characters
 
 ```python
 def main:
@@ -666,13 +741,13 @@ def main:
 | \xhh  | Hex value       |
 
 <!--nextpage-->
-## Working with numbers
+## 7. Working with numbers
 
 * `int`
 * `float`
 * `complex`
 
-### The basics about numbers
+### 7.1. The basics about numbers
 
 ```python
 def main:
@@ -693,7 +768,7 @@ def main:
 <class 'complex'>
 ```
 
-### Type conversion
+### 7.2. Type conversion
 
 Complex numbers cannot be converted into another number type
 
@@ -714,7 +789,7 @@ def main:
 ```
 
 <!--nextpage-->
-## Python Collections
+## 8. Python Collections
 
 There are four collection data types in the Python programming language:
 
@@ -723,7 +798,7 @@ There are four collection data types in the Python programming language:
 * **Set** is a collection which is unordered and unindexed. No duplicate members.
 * **Dictionary** is a collection which is ordered* and changeable. No duplicate members.
 
-### Lists
+### 8.1. Lists
 
 Lists are used to store multiple items in a single variable.
 
@@ -985,7 +1060,7 @@ def main():
     print(mylist)
 ```
 
-### Tuples
+### 8.2. Tuples
 
 Tuples are used to store multiple items in a single variable, and are ordered, allow duplicates
 
@@ -1015,7 +1090,7 @@ Output
 4
 ```
 
-#### Determining the type
+#### 8.2.1. Determining the type
 
 ```python
 def main():
@@ -1157,7 +1232,7 @@ def main():
     print(myfulltuple)
 ```
 
-### Sets
+### 8.3. Sets
 
 Sets are used to store multiple items in a single variable similar to lists, but doesn't allow for duplicates in the set.
 
@@ -1337,7 +1412,7 @@ def main():
     print(deltaset)
 ```
 
-### Dictionaries
+### 8.4. Dictionaries
 
 Dictionaries are used to store values in key-value pairs. As of Python 3.7 dictionaries are ordered, and earlier Python versions are unordered. Also dictionaries are changable.
 
@@ -1680,7 +1755,7 @@ def main():
     print(mydict)
 ```
 
-### Arrays
+### 8.5. Arrays
 
 ```python
 def main():
@@ -1733,9 +1808,9 @@ def main():
 ```
 
 <!--nextpage-->
-## Functions
+## 9. Functions
 
-### Generate a random number
+### 9.1. Generate a random number
 
 ```python
 import random
@@ -1746,7 +1821,7 @@ def main:
 
 `randint` and `seed`
 
-### Absolute value
+### 9.2. Absolute value
 
 ```python
 import random
@@ -1756,7 +1831,7 @@ def main:
 ```
 
 <!--nextpage-->
-## Conditions
+## 10. Conditions
 
 Python supports the usual logical conditions from mathematics:
 
@@ -1783,7 +1858,7 @@ if b > a:
 print("b is greater than a") # you will get an error
 ```
 
-### if-then-elif
+### 10.1. if-then-elif
 
 ```python
 a = 33
@@ -1794,7 +1869,7 @@ elif a == b:
   print("a and b are equal")
 ```
 
-### if-then-else
+### 10.2. if-then-else
 
 ```python
 a = 200
@@ -1816,7 +1891,7 @@ else:
   print("a is greater than b")
 ```
 
-### Nested if-then-else
+### 10.3. Nested if-then-else
 
 ```python
 x = 41
@@ -1829,7 +1904,7 @@ if x > 10:
     print("but not above 20.")
 ```
 
-### Logical operators
+### 10.4. Logical operators
 
 And
 
@@ -1851,7 +1926,7 @@ if a > b or a > c:
   print("At least one of the conditions is True")
 ```
 
-### Shorthand and Conditional Expressions
+### 10.5. Shorthand and Conditional Expressions
 
 ```python
 a = 2
@@ -1878,7 +1953,7 @@ b = 330
 print("A") if a > b else print("=") if a == b else print("B")
 ```
 
-## Using Functions
+## 11. Using Functions
 
 ```python
 def my_function():
@@ -1929,9 +2004,9 @@ def main():
 ```
 
 <!--nextpage-->
-## Loops
+## 12. Loops
 
-### While loop
+### 12.1. While loop
 
 ```python
 def main():
@@ -1971,7 +2046,7 @@ def main():
         print("i is no longer less than 6")
 ```
 
-### For loop
+### 12.2. For loop
 
 ```python
 def main():
@@ -2050,7 +2125,7 @@ def main():
             print(x, y)
 ```
 
-## User Input
+## 13. User Input
 
 * Python 3.6 uses the `input()` method.
 * Python 2.7 uses the `raw_input()` method
@@ -2063,11 +2138,11 @@ def main():
 
 > Python stops executing when it comes to the `input()` function, and continues when the user has given some input.
 
-## Exception handling
+## 14. Exception handling
 
-## Working with Files
+## 15. Working with Files
 
-### Syntax
+### 15.1. Syntax
 
 | Attribuut |  Mode  | Description                                                               |
 | :-------: | :----: | :------------------------------------------------------------------------ |
@@ -2088,7 +2163,7 @@ def main():
     f = open("demofile.txt", "rt")
 ```
 
-### Reading files
+### 15.2. Reading files
 
 ```python
 def main():
@@ -2132,7 +2207,7 @@ def main():
         print(x)
 ```
 
-### Closing
+### 15.3. Closing
 
 ```python
 def main():
@@ -2141,7 +2216,7 @@ def main():
     f.close()
 ```
 
-### Writing files
+### 15.4. Writing files
 
 open and read the file after the appending:
 
@@ -2168,7 +2243,7 @@ def main():
     print(f.read())
 ```
 
-### Create a new file
+### 15.5. Create a new file
 
 "x", "a", "w"
 
@@ -2182,7 +2257,7 @@ def main():
     f = open("myfile.txt", "w")
 ```
 
-### Delete a file or folder
+### 15.6. Delete a file or folder
 
 ```python
 import os
@@ -2209,9 +2284,9 @@ def main():
 ```
 
 <!--nextpage-->
-## Modules
+## 16. Modules
 
-### Using a module
+### 16.1. Using a module
 
 Create a file called `mymodule.py` with the following
 
@@ -2229,7 +2304,7 @@ def main():
     mymodule.greeting("John")
 ```
 
-### Using variable in modules
+### 16.2. Using variable in modules
 
 If we extent `mymodule.py` with the following
 
@@ -2257,7 +2332,7 @@ Output:
 42
 ```
 
-### Import from a module
+### 16.3. Import from a module
 
 You can also import a certain section from a module
 
@@ -2268,7 +2343,7 @@ def main():
     print(person["age"])
 ```
 
-### Rename a module
+### 16.4. Rename a module
 
 We can rename a module during import
 
@@ -2280,7 +2355,7 @@ def main():
     print(age)
 ```
 
-### Built-in modules
+### 16.5. Built-in modules
 
 ```python
 import platform
@@ -2298,9 +2373,9 @@ def main():
     print(x)
 ```
 
-## Classes
+## 17. Classes
 
-### Creating a class and object
+### 17.1. Creating a class and object
 
 ```python
 class MyClass:
@@ -2311,7 +2386,7 @@ def main():
     print(myboject.a)
 ```
 
-### The constructor method
+### 17.2. The constructor method
 
 During the instantiation of a class the constructor method is called to initialize the object. In Python the method name `__init__` is reserved for this purpose.
 
@@ -2327,7 +2402,7 @@ print(person1.name)
 print(person1.age)
 ```
 
-### Define an object method
+### 17.3. Define an object method
 
 Object methods are functions that belong to the object and operation withing the context of the current object.
 
@@ -2344,7 +2419,7 @@ person1 = Person("John", 42)
 person1.myfunc()
 ```
 
-### The self parameter
+### 17.4. The self parameter
 
 The `self` parameter is a reference to the current instance of the class and has been specified in [PEP-8][arguments], but isn't a reserved keyword. The name of first argument can be anything you want.
 
@@ -2361,7 +2436,7 @@ person1 = Person("John", 42)
 person1.myfunc()
 ```
 
-### Object actions
+### 17.5. Object actions
 
 Modify an object property
 
@@ -2381,7 +2456,7 @@ Delete an object
 del person1
 ```
 
-### Inheritance
+### 17.6. Inheritance
 
 ```python
 class Person:
@@ -2436,11 +2511,11 @@ engineer1.myfunc()
 ```
 
 <!--nextpage-->
-## PIP: Using packages and virtual environments
+## 18. PIP: Using packages and virtual environments
 
 PIP is a package manager for Python for packages or modules
 
-### Create and start the virtual environment
+### 18.1. Create and start the virtual environment
 
 First we create virtual environment
 
@@ -2463,7 +2538,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-### Managing packages with pip
+### 18.2. Managing packages with pip
 
 Since Python 3.4, Pip is installed by default en
 
@@ -2538,7 +2613,7 @@ pip        20.2.2
 setuptools 49.1.3
 ```
 
-### Install all dependencies
+### 18.3. Install all dependencies
 
 ```shell
 (.venv) $ pip freeze > requirements.txt
