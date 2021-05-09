@@ -84,7 +84,7 @@ toc: true
 
 ## 1. Introduction
 
-[Python][Python] is a language specification with multiple implementations like CPython, Jython, and MicroPython, but almost everyone refers to the CPython implementation as Python that can be found on almost every Linux server. The MicroPython implementation is to run Python on microcontrollers. Jython is the last big implementation of Python 2 that runs on the Java Virtual Machine, but development for Python 3.8 support has recently started.
+[Python][Python] is a language specification with multiple implementations like CPython, Jython, and MicroPython, but almost everyone refers to the CPython implementation as Python that can be found on almost every Linux server. The MicroPython implementation is to run Python on microcontrollers. Jython is the last big implementation of Python 2 that runs on the Java Virtual Machine and development has mostly stalled, but development for Python 3.8 support has recently started.
 
 The Python Institute also has a certification traject with three levels called [PCEP], [PCAP], and [PCPP]. As the PCAP exam also covers the PCEP objectives most people directly take this exam. The PCPP covers the Python ecosystem part and more advantage architecture patterns.
 

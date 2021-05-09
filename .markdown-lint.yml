@@ -1,4 +1,5 @@
-{
-  "first-line-h1": false,
-  "line_length": false
-}
+---
+MD013:
+  line_length: 1024
+MD041:
+  level: 1
