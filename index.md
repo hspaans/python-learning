@@ -12,33 +12,31 @@ toc: true
 - [4. Python syntax](#4-python-syntax)
   - [4.1. Indentation](#41-indentation)
   - [4.2. Comments](#42-comments)
-- [5. Working with variables](#5-working-with-variables)
+- [5. Variables](#5-variables)
   - [5.1. The basics about variables](#51-the-basics-about-variables)
   - [5.2. Different data types](#52-different-data-types)
   - [5.3. Casting variables](#53-casting-variables)
   - [5.4. Getting a variable type](#54-getting-a-variable-type)
   - [5.5. Variable scope](#55-variable-scope)
-- [6. Working with strings](#6-working-with-strings)
+- [6. Strings](#6-strings)
   - [6.1. The basics about strings](#61-the-basics-about-strings)
   - [6.2. Strings are arrays](#62-strings-are-arrays)
-  - [6.3. Looping through a string](#63-looping-through-a-string)
-  - [6.4. String length](#64-string-length)
-  - [6.5. Checking a string](#65-checking-a-string)
-  - [6.6. Slicing strings](#66-slicing-strings)
-  - [6.7. Modifying strings](#67-modifying-strings)
-    - [6.7.1. Convert your string to upper or lower case](#671-convert-your-string-to-upper-or-lower-case)
-    - [6.7.2. Removing a whitespace](#672-removing-a-whitespace)
-    - [6.7.3. Replacing a string](#673-replacing-a-string)
-    - [6.7.4. Split a string](#674-split-a-string)
-  - [6.8. Formatting strings](#68-formatting-strings)
-  - [6.9. Escape characters](#69-escape-characters)
-- [7. Working with numbers](#7-working-with-numbers)
+  - [6.3. String length](#63-string-length)
+  - [6.4. Checking a string](#64-checking-a-string)
+  - [6.5. Slicing strings](#65-slicing-strings)
+  - [6.6. Modifying strings](#66-modifying-strings)
+    - [6.6.1. Convert your string to upper or lower case](#661-convert-your-string-to-upper-or-lower-case)
+    - [6.6.2. Removing a whitespace](#662-removing-a-whitespace)
+    - [6.6.3. Replacing a string](#663-replacing-a-string)
+    - [6.6.4. Split a string](#664-split-a-string)
+  - [6.7. Formatting strings](#67-formatting-strings)
+  - [6.8. Escape characters](#68-escape-characters)
+- [7. Numbers](#7-numbers)
   - [7.1. The basics about numbers](#71-the-basics-about-numbers)
   - [7.2. Type conversion](#72-type-conversion)
 - [8. Python Collections](#8-python-collections)
   - [8.1. Lists](#81-lists)
   - [8.2. Tuples](#82-tuples)
-    - [8.2.1. Determining the type](#821-determining-the-type)
   - [8.3. Sets](#83-sets)
   - [8.4. Dictionaries](#84-dictionaries)
   - [8.5. Arrays](#85-arrays)
@@ -311,7 +309,7 @@ Hello John.
 ```
 
 <!--nextpage-->
-## 5. Working with variables
+## 5. Variables
 
 No programs works without variables to store data values in while the program runs. Variables in Python are strong dynamically typed which mean you can change a variable from a number to a string by assignment, but a variable will not become a number when a string contains a number for example. This also means you may have to cast variable from a number to a string in some cases or vice versa.
 
@@ -504,15 +502,29 @@ Hello People.
 > Using global variables is considert bad programming and a risk as it can have unforeseen effects.
 
 <!--nextpage-->
-## 6. Working with strings
+## 6. Strings
+
+In Python strings are surrounds by either single quotation marks, or double quotation marks. [PEP 8][pep-0008] describes no standard on how to use single or double-quotes:
+
+> In Python, single-quoted strings and double-quoted strings are the same. This PEP does not make a recommendation for this. Pick a rule and stick to it. When a string contains single or double quote characters, however, use the other one to avoid backslashes in the string. It improves readability.
+>
+> For triple-quoted strings, always use double quote characters to be consistent with the docstring convention in [PEP 257][pep-0257].
+
+Some tools like [Black][black] have a preference to have all strings and comments in double quotes, but both ways are correct.
 
 ### 6.1. The basics about strings
 
-The most basic form of a string is one that is given directly to the `print()`
+The most basic form of a string is one that is given directly to `print()`.
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     print("Hello World.")
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Output:
@@ -521,10 +533,18 @@ Output:
 Hello World.
 ```
 
+The second form is to assign a variable to a string and can be used by `print()` as a reference to the string.
+
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     print(phrase)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Output:
@@ -533,63 +553,107 @@ Output:
 Hello World.
 ```
 
+As seen in the [Variables](#5-variables) section, variables can be joined with the `+`-sign and a string can also be concatenated with a variable.
+
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     phrase_two = "And Goodbye."
+    # Concatenate two variables
     print(phrase_one + phrase_two)
+    # Concatenate two variables with a string
+    print(phrase_one + " " + phrase_two)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Output:
 
 ```shel
 Hello World.And Goodbye.
-```
-
-```python
-def main:
-    phrase_one = "Hello World."
-    phrase_two = "And Goodbye."
-    print(phrase_one + " " + phrase_two)
-```
-
-Output:
-
-```shell
 Hello World. And Goodbye.
 ```
 
+Strings can also be a multiline string with a newline character as part of the value. Python does take the indentation of a multiline string not into account and will the indentation will be part of the string. On Stack Overflow in [question 2504411][stackoverflow-2504411] possible solutions to work around this issue are discusses.
+
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = """Hello World.
     And Goodbye."""
     print(phrase_one)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Output:
 
 ```shell
 Hello World.
-And Goodbye.
+    And Goodbye.
 ```
 
 ### 6.2. Strings are arrays
 
+Strings are like in other languages arrays and can be address in that way. The working of arrays is described in [Arrays](#85-arrays), but for now we read the second element of the array and print it.
+
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     print(phrase_one[1])
+
+
+if __name__ == "__main__":
+    main()
 ```
 
-### 6.3. Looping through a string
+Output:
+
+```shell
+e
+```
+
+As a strings is an array you can easily [loop](#122-for-loop) over all elements and get every element separately.
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     for x in "Hello World.":
         print(x)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
-### 6.4. String length
+Output:
+
+```shell
+H
+e
+l
+l
+o
+ 
+W
+o
+r
+l
+d
+.
+```
+
+### 6.3. String length
 
 ```python
 def main:
@@ -597,7 +661,7 @@ def main:
     print(len(phrase_one))
 ```
 
-### 6.5. Checking a string
+### 6.4. Checking a string
 
 ```python
 def main:
@@ -619,7 +683,7 @@ def main:
         print("Yes, Hello World.")
 ```
 
-### 6.6. Slicing strings
+### 6.5. Slicing strings
 
 ```python
 def main:
@@ -645,9 +709,9 @@ def main:
     print(phrase_one[-5:-2])
 ```
 
-### 6.7. Modifying strings
+### 6.6. Modifying strings
 
-#### 6.7.1. Convert your string to upper or lower case
+#### 6.6.1. Convert your string to upper or lower case
 
 ```python
 def main:
@@ -661,7 +725,7 @@ def main:
     print(phrase_one.lower())
 ```
 
-#### 6.7.2. Removing a whitespace
+#### 6.6.2. Removing a whitespace
 
 ```python
 def main:
@@ -671,7 +735,7 @@ def main:
 
 `lstrip` and `rstrip`
 
-#### 6.7.3. Replacing a string
+#### 6.6.3. Replacing a string
 
 ```python
 def main:
@@ -679,7 +743,7 @@ def main:
     print(phrase_one.replace("W", "w"))
 ```
 
-#### 6.7.4. Split a string
+#### 6.6.4. Split a string
 
 ```python
 def main:
@@ -689,7 +753,7 @@ def main:
 
 `join`
 
-### 6.8. Formatting strings
+### 6.7. Formatting strings
 
 ```python
 def main:
@@ -714,7 +778,7 @@ def main:
     print(phrase_one.format(name_one, name_two))
 ```
 
-### 6.9. Escape characters
+### 6.8. Escape characters
 
 ```python
 def main:
@@ -741,7 +805,7 @@ def main:
 | \xhh  | Hex value       |
 
 <!--nextpage-->
-## 7. Working with numbers
+## 7. Numbers
 
 - `int`
 - `float`
@@ -1090,7 +1154,7 @@ Output
 4
 ```
 
-#### 8.2.1. Determining the type
+Determining the type
 
 ```python
 def main():
@@ -2642,6 +2706,7 @@ Installing collected packages: camelcase
 Successfully installed camelcase-0.2
 ```
 
+[black]: https://black.readthedocs.io/en/stable/
 [python-devcontainer]: https://github.com/hspaans/python-devcontainer
 [python-template]: https://github.com/hspaans/python-template
 [vscode]: https://code.visualstudio.com
@@ -2654,3 +2719,6 @@ Successfully installed camelcase-0.2
 [PCPP]: https://pythoninstitute.org/certification/pcpp-certification-professional/
 [arguments]: https://www.python.org/dev/peps/pep-0008/#function-and-method-arguments
 [shebang]: https://en.m.wikipedia.org/wiki/Shebang_(Unix)
+[pep-0008]: https://www.python.org/dev/peps/pep-0008/
+[pep-0257]: https://www.python.org/dev/peps/pep-0257/
+[stackoverflow-2504411]: https://stackoverflow.com/questions/2504411/proper-indentation-for-python-multiline-strings
