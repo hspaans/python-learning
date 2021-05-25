@@ -24,61 +24,81 @@ toc: true
   - [6.3. String length](#63-string-length)
   - [6.4. Checking a string](#64-checking-a-string)
   - [6.5. Slicing strings](#65-slicing-strings)
-  - [6.6. Modifying strings](#66-modifying-strings)
-    - [6.6.1. Convert your string to upper or lower case](#661-convert-your-string-to-upper-or-lower-case)
-    - [6.6.2. Removing a whitespace](#662-removing-a-whitespace)
-    - [6.6.3. Replacing a string](#663-replacing-a-string)
-    - [6.6.4. Split a string](#664-split-a-string)
-  - [6.7. Formatting strings](#67-formatting-strings)
-  - [6.8. Escape characters](#68-escape-characters)
+  - [6.6. Convert your string to upper or lower case](#66-convert-your-string-to-upper-or-lower-case)
+  - [6.7. Trim a string](#67-trim-a-string)
+  - [6.8. Replacing a string](#68-replacing-a-string)
+  - [6.9. Split a string](#69-split-a-string)
+  - [6.10. Formatting strings](#610-formatting-strings)
+  - [6.11. Escape characters](#611-escape-characters)
 - [7. Numbers](#7-numbers)
   - [7.1. The basics about numbers](#71-the-basics-about-numbers)
   - [7.2. Type conversion](#72-type-conversion)
-- [8. Python Collections](#8-python-collections)
-  - [8.1. Lists](#81-lists)
-  - [8.2. Tuples](#82-tuples)
-  - [8.3. Sets](#83-sets)
-  - [8.4. Dictionaries](#84-dictionaries)
-  - [8.5. Arrays](#85-arrays)
-- [9. Functions](#9-functions)
-  - [9.1. Generate a random number](#91-generate-a-random-number)
-  - [9.2. Absolute value](#92-absolute-value)
-- [10. Conditions](#10-conditions)
-  - [10.1. if-then-elif](#101-if-then-elif)
-  - [10.2. if-then-else](#102-if-then-else)
-  - [10.3. Nested if-then-else](#103-nested-if-then-else)
-  - [10.4. Logical operators](#104-logical-operators)
-  - [10.5. Shorthand and Conditional Expressions](#105-shorthand-and-conditional-expressions)
-- [11. Using Functions](#11-using-functions)
-- [12. Loops](#12-loops)
-  - [12.1. While loop](#121-while-loop)
-  - [12.2. For loop](#122-for-loop)
-- [13. User Input](#13-user-input)
-- [14. Exception handling](#14-exception-handling)
-- [15. Working with Files](#15-working-with-files)
-  - [15.1. Syntax](#151-syntax)
-  - [15.2. Reading files](#152-reading-files)
-  - [15.3. Closing](#153-closing)
-  - [15.4. Writing files](#154-writing-files)
-  - [15.5. Create a new file](#155-create-a-new-file)
-  - [15.6. Delete a file or folder](#156-delete-a-file-or-folder)
-- [16. Modules](#16-modules)
-  - [16.1. Using a module](#161-using-a-module)
-  - [16.2. Using variable in modules](#162-using-variable-in-modules)
-  - [16.3. Import from a module](#163-import-from-a-module)
-  - [16.4. Rename a module](#164-rename-a-module)
-  - [16.5. Built-in modules](#165-built-in-modules)
-- [17. Classes](#17-classes)
-  - [17.1. Creating a class and object](#171-creating-a-class-and-object)
-  - [17.2. The constructor method](#172-the-constructor-method)
-  - [17.3. Define an object method](#173-define-an-object-method)
-  - [17.4. The self parameter](#174-the-self-parameter)
-  - [17.5. Object actions](#175-object-actions)
-  - [17.6. Inheritance](#176-inheritance)
-- [18. PIP: Using packages and virtual environments](#18-pip-using-packages-and-virtual-environments)
-  - [18.1. Create and start the virtual environment](#181-create-and-start-the-virtual-environment)
-  - [18.2. Managing packages with pip](#182-managing-packages-with-pip)
-  - [18.3. Install all dependencies](#183-install-all-dependencies)
+  - [7.3. Generate a random number](#73-generate-a-random-number)
+  - [7.4. Absolute value](#74-absolute-value)
+  - [7.5. Using the math module](#75-using-the-math-module)
+  - [7.6. Converting between decimal, binary, octal, and hexadecimal](#76-converting-between-decimal-binary-octal-and-hexadecimal)
+- [8. Booleans](#8-booleans)
+  - [8.1. The basics about booleans](#81-the-basics-about-booleans)
+  - [8.2. Some values are false](#82-some-values-are-false)
+  - [8.3. Functions can also return a boolean](#83-functions-can-also-return-a-boolean)
+- [9. Operators](#9-operators)
+  - [9.1. Arithmetic operators](#91-arithmetic-operators)
+  - [9.2. Comparison operators](#92-comparison-operators)
+  - [9.3. Logical operators](#93-logical-operators)
+  - [9.4. Identity operators](#94-identity-operators)
+  - [9.5. Membership operators](#95-membership-operators)
+  - [9.6. Bitwise operators](#96-bitwise-operators)
+  - [9.7. Assignment operators](#97-assignment-operators)
+- [10. Python Collections](#10-python-collections)
+  - [10.1. Lists](#101-lists)
+  - [10.2. Tuples](#102-tuples)
+  - [10.3. Sets](#103-sets)
+  - [10.4. Dictionaries](#104-dictionaries)
+  - [10.5. Arrays](#105-arrays)
+- [11. Conditions](#11-conditions)
+  - [11.1. if-then-elif](#111-if-then-elif)
+  - [11.2. if-then-else](#112-if-then-else)
+  - [11.3. Nested if-then-else](#113-nested-if-then-else)
+  - [11.4. Logical operators](#114-logical-operators)
+  - [11.5. Shorthand and Conditional Expressions](#115-shorthand-and-conditional-expressions)
+- [12. Using Functions](#12-using-functions)
+  - [12.1. The basics about functions](#121-the-basics-about-functions)
+  - [12.2. Introduction to Lambda](#122-introduction-to-lambda)
+  - [12.3. Using Lambda functions](#123-using-lambda-functions)
+- [13. Loops](#13-loops)
+  - [13.1. While loop](#131-while-loop)
+  - [13.2. For loop](#132-for-loop)
+- [14. User Input](#14-user-input)
+- [15. Exception handling](#15-exception-handling)
+  - [15.1. The basics about exceptions](#151-the-basics-about-exceptions)
+  - [15.2. Raise an exception](#152-raise-an-exception)
+- [16. Working with Files](#16-working-with-files)
+  - [16.1. Syntax](#161-syntax)
+  - [16.2. Reading files](#162-reading-files)
+  - [16.3. Closing](#163-closing)
+  - [16.4. Writing files](#164-writing-files)
+  - [16.5. Create a new file](#165-create-a-new-file)
+  - [16.6. Delete a file or folder](#166-delete-a-file-or-folder)
+- [17. Modules](#17-modules)
+  - [17.1. Using a module](#171-using-a-module)
+  - [17.2. Using variable in modules](#172-using-variable-in-modules)
+  - [17.3. Import from a module](#173-import-from-a-module)
+  - [17.4. Rename a module](#174-rename-a-module)
+  - [17.5. Built-in modules](#175-built-in-modules)
+- [18. Classes](#18-classes)
+  - [18.1. Creating a class and object](#181-creating-a-class-and-object)
+  - [18.2. The constructor method](#182-the-constructor-method)
+  - [18.3. Define an object method](#183-define-an-object-method)
+  - [18.4. The self parameter](#184-the-self-parameter)
+  - [18.5. Object actions](#185-object-actions)
+  - [18.6. Inheritance](#186-inheritance)
+- [19. Iterators](#19-iterators)
+  - [19.1. The basics about iterators](#191-the-basics-about-iterators)
+  - [19.2. Creating an iterator](#192-creating-an-iterator)
+- [20. PIP: Using packages and virtual environments](#20-pip-using-packages-and-virtual-environments)
+  - [20.1. Create and start the virtual environment](#201-create-and-start-the-virtual-environment)
+  - [20.2. Managing packages with pip](#202-managing-packages-with-pip)
+  - [20.3. Install all dependencies](#203-install-all-dependencies)
 
 ## 1. Introduction
 
@@ -655,141 +675,323 @@ d
 
 ### 6.3. String length
 
+The built-in function `len()` return the length of an object and used the internal method `__len__()` of the object to determine the length.
+
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
+    # Using the built-in version
     print(len(phrase_one))
+    # Using the internal method of an object
+    print(phrase_one.__len__())
+
+
+if __name__ == "__main__":
+    main()
+```
+
+```shell
+12
+12
 ```
 
 ### 6.4. Checking a string
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     print("Hello" in phrase_one)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+True
 ```
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     if "Hello" in phrase_one:
         print("Yes, Hello World.")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+Yes, Hello World.
 ```
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     if "Hello" not in phrase_one:
         print("Yes, Hello World.")
+    else:
+        print("No, Hello World.")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+No, Hello World.
 ```
 
 ### 6.5. Slicing strings
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     print(phrase_one[2:5])
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     print(phrase_one[:5])
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     print(phrase_one[2:])
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     print(phrase_one[-5:-2])
+
+
+if __name__ == "__main__":
+    main()
 ```
 
-### 6.6. Modifying strings
-
-#### 6.6.1. Convert your string to upper or lower case
+### 6.6. Convert your string to upper or lower case
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     print(phrase_one.upper())
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+HELLO WORLD.
 ```
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     print(phrase_one.lower())
+
+
+if __name__ == "__main__":
+    main()
 ```
 
-#### 6.6.2. Removing a whitespace
+Output:
+
+```shell
+hello world.
+```
+
+### 6.7. Trim a string
+
+The method `strip()` removes by default whitespace character from the string on both sides. With `lstrip()` or `rstrip()` the string is only being trimmed on the left or ride side.
 
 ```python
-def main:
-    phrase_one = "Hello World. "
+#!/usr/bin/env python3
+
+def main():
+    phrase_one = " Hello World. "
+    print(phrase_one)
     print(phrase_one.strip())
+
+
+if __name__ == "__main__":
+    main()
 ```
 
-`lstrip` and `rstrip`
+Output:
 
-#### 6.6.3. Replacing a string
+```shell
+ Hello World.
+Hello World.
+```
+
+The method `strip` by default trims whitespace characters, but can also use other characters to trim a string.
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
+    phrase_one = "Hello World."
+    print(phrase_one.strip("HeldW."))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+o Wor
+```
+
+### 6.8. Replacing a string
+
+```python
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     print(phrase_one.replace("W", "w"))
+
+
+if __name__ == "__main__":
+    main()
 ```
 
-#### 6.6.4. Split a string
+### 6.9. Split a string
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello World."
     print(phrase_one.split(" "))
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 `join`
 
-### 6.7. Formatting strings
+### 6.10. Formatting strings
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     name_one = "World"
     phrase_one = "Hello {}."
     print(phrase_one.format(name_one))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+Hello World.
 ```
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     name_one = "Jack"
     name_two = "John"
     phrase_one = "Hello {} and {}."
     print(phrase_one.format(name_one, name_two))
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     name_one = "Jack"
     name_two = "John"
     phrase_one = "Hello {1} and {0}."
     print(phrase_one.format(name_one, name_two))
+
+
+if __name__ == "__main__":
+    main()
 ```
 
-### 6.8. Escape characters
+### 6.11. Escape characters
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello "World"."
     print(phrase_one)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     phrase_one = "Hello \"World\"."
     print(phrase_one)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 | Code  | Result          |
@@ -814,7 +1016,9 @@ def main:
 ### 7.1. The basics about numbers
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     q = -1
     x = 1
     y = 3.14
@@ -823,6 +1027,10 @@ def main:
     print(type(x))
     print(type(y))
     print(type(z))
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```shell
@@ -837,7 +1045,9 @@ def main:
 Complex numbers cannot be converted into another number type
 
 ```python
-def main:
+#!/usr/bin/env python3
+
+def main():
     x = 1
     y = 3.14
     z = 1j
@@ -850,10 +1060,325 @@ def main:
 
     print(type(a))
     print(type(b))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+### 7.3. Generate a random number
+
+```python
+#!/usr/bin/env python3
+
+import random
+
+def main():
+    print(random.randrange(1, 10))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+`randint` and `seed`
+
+### 7.4. Absolute value
+
+```python
+#!/usr/bin/env python3
+
+import random
+
+def main():
+    print(abs(-1))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+1
+```
+
+### 7.5. Using the math module
+
+A [math](https://docs.python.org/3/library/math.html) modules ships with Python for advanced calculations.
+
+```python
+#!/usr/bin/env python3
+
+import math
+
+def main():
+    # print Pi
+    print(math.pi)
+    # Determine the smallest integer greater than or equal
+    print(math.ceil(8.3))
+    # Determine the largest integer smaller than or equal
+    print(math.floor(8.3))
+    # Print the square root
+    print(math.sqrt(9))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+3.141592653589793
+9
+8
+3.0
+```
+
+### 7.6. Converting between decimal, binary, octal, and hexadecimal
+
+```python
+#!/usr/bin/env python3
+
+import math
+
+def main():
+    value_dec = 128
+    value_bin = 0b10000000
+    value_oct = 0o200
+    value_hex = 0x80
+
+    print("The value_decimal value of", value_dec, "is:")
+    print(bin(value_dec), "in binary.")
+    print(oct(value_dec), "in octal.")
+    print(hex(value_dec), "in hexadecimal.")
+
+    print("The binary value of", (value_bin), "is:")
+    print(int(value_bin), "in decimal.")
+    print(oct(value_bin), "in octal.")
+    print(hex(value_bin), "in hexadecimal.")
+
+    print("The octal value of", oct(value_oct), "is:")
+    print(int(value_oct), "in decimal.")
+    print(bin(value_oct), "in binary.")
+    print(hex(value_oct), "in hexadecimal.")
+
+    print("The hexvalue_decimal value of", hex(value_hex), "is:")
+    print(int(value_hex), "in decimal.")
+    print(bin(value_hex), "in binary.")
+    print(oct(value_hex), "in octal.")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+The value_decimal value of 128 is:
+0b10000000 in binary.
+0o200 in octal.
+0x80 in hexadecimal.
+The binary value of 128 is:
+128 in decimal.
+0o200 in octal.
+0x80 in hexadecimal.
+The octal value of 0o200 is:
+128 in decimal.
+0b10000000 in binary.
+0x80 in hexadecimal.
+The hexvalue_decimal value of 0x80 is:
+128 in decimal.
+0b10000000 in binary.
+0o200 in octal.
 ```
 
 <!--nextpage-->
-## 8. Python Collections
+## 8. Booleans
+
+### 8.1. The basics about booleans
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    print(1 > 2)
+    print(1 == 2)
+    print(1 < 2)
+    print(bool(0))
+    print(bool(1))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+False
+False
+True
+False
+True
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    x = 10
+    y = 5
+
+    if x > y:
+        print("x is greater than y")
+    else:
+        print("x is not greater than y")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+x is greater than y
+```
+
+### 8.2. Some values are false
+
+```python
+#!/usr/bin/env python3
+
+class myClass():
+    def __len__(self):
+        return 0
+
+
+def main():
+    myobj = myClass()
+    print(bool(myobj))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+False
+```
+
+### 8.3. Functions can also return a boolean
+
+```python
+#!/usr/bin/env python3
+
+def trueFunction():
+    return True
+
+
+def main():
+    if trueFunction():
+        print("True")
+    else:
+        print("False")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+True
+```
+
+<!--nextpage-->
+## 9. Operators
+
+### 9.1. Arithmetic operators
+
+| Operator | Name           | Example |
+| :------: | :------------- | :------ |
+|    +     | Addition       | x + y   |
+|    -     | Subtraction    | x - y   |
+|    *     | Multiplication | x * y   |
+|    /     | Division       | x / y   |
+|    %     | Modulus        | x % y   |
+|    **    | Exponentiation | x ** y  |
+|    //    | Floor division | x // y  |
+
+### 9.2. Comparison operators
+
+| Operator | Name                     | Example |
+| :------: | :----------------------- | :------ |
+|    ==    | Equal                    | x == y  |
+|    !=    | Not equal                | x != y  |
+|    >     | Greater than             | x > y   |
+|    <     | Less than                | x < y   |
+|    >=    | Greater than or equal to | x >= y  |
+|    <=    | Less than or equal to    | x <= y  |
+
+### 9.3. Logical operators
+
+| Operator | Description                                             | Example               |
+| :------: | :------------------------------------------------------ | :-------------------- |
+|   and    | Returns True if both statements are true                | x < 5 and  x < 10     |
+|    or    | Returns True if one of the statements is true           | x < 5 or x < 4        |
+|   not    | Reverse the result, returns False if the result is true | not(x < 5 and x < 10) |
+
+### 9.4. Identity operators
+
+| Operator | Description                                            | Example    |
+| :------: | :----------------------------------------------------- | :--------- |
+|    is    | Returns True if both variables are the same object     | x is y     |
+|  is not  | Returns True if both variables are not the same object | x is not y |
+
+### 9.5. Membership operators
+
+| Operator | Description                                                                      | Example    |
+| :------: | :------------------------------------------------------------------------------- | :--------- |
+|    in    | Returns True if a sequence with the specified value is present in the object     | x in y     |
+|  not in  | Returns True if a sequence with the specified value is not present in the object | x not in y |
+
+### 9.6. Bitwise operators
+
+| Operator | Name                 | Description                                                                                             |
+| :------: | :------------------- | :------------------------------------------------------------------------------------------------------ |
+|    &     | AND                  | Sets each bit to 1 if both bits are 1                                                                   |
+|    \|    | OR                   | Sets each bit to 1 if one of two bits is 1                                                              |
+|    ^     | XOR                  | Sets each bit to 1 if only one of two bits is 1                                                         |
+|    ~     | NOT                  | Inverts all the bits                                                                                    |
+|    <<    | Zero fill left shift | Shift left by pushing zeros in from the right and let the leftmost bits fall off                        |
+|    >>    | Signed right shift   | Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off |
+
+### 9.7. Assignment operators
+
+| Operator | Description               | Example | Long form  |
+| :------: | :------------------------ | :------ | :--------- |
+|    =     | Assignment                | x = 2   | x = 2      |
+|    +=    | Arithmetic Addition       | x += 2  | x = x + 2  |
+|    -=    | Arithmetic Subtraction    | x -= 2  | x = x - 2  |
+|    *=    | Arithmetic Multiplication | x *= 2  | x = x * 2  |
+|    /=    | Arithmetic Division       | x /= 2  | x = x / 2  |
+|    %=    | Arithmetic Modulus        | x %= 2  | x = x % 2  |
+|   //=    | Arithmetic Exponentiation | x //= 2 | x = x // 2 |
+|   **=    | Arithmetic Floor division | x **= 2 | x = x ** 2 |
+|    &=    | Bitwise AND               | x &= 2  | x = x & 2  |
+|   \|=    | Bitwise OR                | x \|= 2 | x = x \| 2 |
+|    ^=    | Bitwise XOR               | x ^= 2  | x = x ^ 2  |
+|   >>=    | Bitwise Shift Left        | x >>= 2 | x = x >> 2 |
+|   <<=    | Bitwise Shift Right       | x <<= 2 | x = x << 2 |
+
+<!--nextpage-->
+## 10. Python Collections
 
 There are four collection data types in the Python programming language:
 
@@ -862,14 +1387,20 @@ There are four collection data types in the Python programming language:
 - **Set** is a collection which is unordered and unindexed. No duplicate members.
 - **Dictionary** is a collection which is ordered* and changeable. No duplicate members.
 
-### 8.1. Lists
+### 10.1. Lists
 
 Lists are used to store multiple items in a single variable.
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Output
@@ -881,22 +1412,36 @@ Output
 Lists can have duplicates and are ordered
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry", "apple", "cherry"]
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 List length `len()`
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     print(len(mylist))
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 A lists can contain different data types
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist1 = ["apple", "banana", "cherry"]
     mylist2 = [1, 5, 7, 9, 3]
@@ -907,14 +1452,24 @@ def main():
     print(mylist2)
     print(mylist3)
     print(mylist4)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Using the type() function
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     print(type(mylist))
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```shell
@@ -924,17 +1479,29 @@ def main():
 Uusing the list() constructor
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = list(("apple", "banana", "cherry"))
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 List items can directly be addressed
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     print(mylist[1])
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Output:
@@ -944,9 +1511,15 @@ banana
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     print(mylist[-1])
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Output:
@@ -958,173 +1531,289 @@ cherry
 Indexes
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
     print(mylist[2:5])
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
     print(mylist[:4])
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
     print(mylist[2:])
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Negative indexes
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
     print(mylist[-4:-1])
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Check if item exists
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     if "apple" in mylist:
         print("Yes, 'apple' is in the fruits list")
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Changing an item
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     mylist[1] = "blackcurrant"
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Changing a range of items
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
     mylist[1:3] = ["blackcurrant", "watermelon"]
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
     mylist[1:2] = ["blackcurrant", "watermelon"]
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     mylist[1:3] = ["watermelon"]
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Append an item
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     mylist.append("orange")
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Insert items
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     mylist.insert(2, "watermelon")
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Extending a list
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     tropical = ["mango", "pineapple", "papaya"]
     mylist.extend(tropical)
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Adding
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     mytuple = ("kiwi", "orange")
     mylist.extend(mytuple)
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Remove a specified item
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     mylist.remove("banana")
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Remove a specified index item
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     mylist.pop(1)
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Remove the last item
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     mylist.pop()
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Remove the first item
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     del mylist[0]
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Delete the entire list
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     del mylist
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Clear the list
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     mylist.clear()
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Sort the list
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     mylist = ["apple", "banana", "cherry"]
     mylist.sort()
     print(mylist)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
-### 8.2. Tuples
+### 10.2. Tuples
 
 Tuples are used to store multiple items in a single variable, and are ordered, allow duplicates
 
@@ -1296,7 +1985,7 @@ def main():
     print(myfulltuple)
 ```
 
-### 8.3. Sets
+### 10.3. Sets
 
 Sets are used to store multiple items in a single variable similar to lists, but doesn't allow for duplicates in the set.
 
@@ -1476,7 +2165,7 @@ def main():
     print(deltaset)
 ```
 
-### 8.4. Dictionaries
+### 10.4. Dictionaries
 
 Dictionaries are used to store values in key-value pairs. As of Python 3.7 dictionaries are ordered, and earlier Python versions are unordered. Also dictionaries are changable.
 
@@ -1819,7 +2508,7 @@ def main():
     print(mydict)
 ```
 
-### 8.5. Arrays
+### 10.5. Arrays
 
 ```python
 def main():
@@ -1872,30 +2561,7 @@ def main():
 ```
 
 <!--nextpage-->
-## 9. Functions
-
-### 9.1. Generate a random number
-
-```python
-import random
-
-def main:
-    print(random.randrange(1, 10))
-```
-
-`randint` and `seed`
-
-### 9.2. Absolute value
-
-```python
-import random
-
-def main:
-    print(abs(-1))
-```
-
-<!--nextpage-->
-## 10. Conditions
+## 11. Conditions
 
 Python supports the usual logical conditions from mathematics:
 
@@ -1922,7 +2588,7 @@ if b > a:
 print("b is greater than a") # you will get an error
 ```
 
-### 10.1. if-then-elif
+### 11.1. if-then-elif
 
 ```python
 a = 33
@@ -1933,7 +2599,7 @@ elif a == b:
   print("a and b are equal")
 ```
 
-### 10.2. if-then-else
+### 11.2. if-then-else
 
 ```python
 a = 200
@@ -1955,7 +2621,7 @@ else:
   print("a is greater than b")
 ```
 
-### 10.3. Nested if-then-else
+### 11.3. Nested if-then-else
 
 ```python
 x = 41
@@ -1968,7 +2634,7 @@ if x > 10:
     print("but not above 20.")
 ```
 
-### 10.4. Logical operators
+### 11.4. Logical operators
 
 And
 
@@ -1990,7 +2656,7 @@ if a > b or a > c:
   print("At least one of the conditions is True")
 ```
 
-### 10.5. Shorthand and Conditional Expressions
+### 11.5. Shorthand and Conditional Expressions
 
 ```python
 a = 2
@@ -2017,7 +2683,10 @@ b = 330
 print("A") if a > b else print("=") if a == b else print("B")
 ```
 
-## 11. Using Functions
+<!--nextpage-->
+## 12. Using Functions
+
+### 12.1. The basics about functions
 
 ```python
 def my_function():
@@ -2067,20 +2736,99 @@ def main():
     my_function("Brazil")
 ```
 
-<!--nextpage-->
-## 12. Loops
+### 12.2. Introduction to Lambda
 
-### 12.1. While loop
+A lambda function is an anonymous function
+
+Syntax:
 
 ```python
+lambda arguments : expression
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    x = lambda a : a + 2
+    print(x(2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+4
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    x = lambda a, b : a + b
+    print(x(2, 3))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+5
+```
+
+### 12.3. Using Lambda functions
+
+```python
+#!/usr/bin/env python3
+
+def myDouble(x):
+    return lambda a : a * x
+
+def main():
+    double = myDouble(2)
+    print(double(3))
+    print(double(4))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+6
+8
+```
+
+<!--nextpage-->
+## 13. Loops
+
+### 13.1. While loop
+
+```python
+#!/usr/bin/env python3
+
 def main():
     i = 1
     while i < 6:
         print(i)
         i += 1
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     i = 1
     while i < 6:
@@ -2088,9 +2836,15 @@ def main():
         if i == 3:
             break
         i += 1
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     i = 0
     while i < 6:
@@ -2098,9 +2852,15 @@ def main():
         if i == 3:
             continue
         print(i)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     i = 1
     while i < 6:
@@ -2108,68 +2868,122 @@ def main():
         i += 1
     else:
         print("i is no longer less than 6")
+
+
+if __name__ == "__main__":
+    main()
 ```
 
-### 12.2. For loop
+### 13.2. For loop
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     fruits = ["apple", "banana", "cherry"]
     for x in fruits:
         print(x)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     for x in "banana":
         print(x)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     fruits = ["apple", "banana", "cherry"]
     for x in fruits:
         if x == "banana":
             break
         print(x)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     fruits = ["apple", "banana", "cherry"]
     for x in fruits:
         if x == "banana":
             continue
         print(x)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     for x in range(6):
         print(x)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     for x in range(2, 6):
         print(x)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     for x in range(2, 30, 3):
         print(x)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     for x in range(6):
         print(x)
     else:
         print("Finally finished!")
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     for x in range(6):
         if x == 3:
@@ -2177,9 +2991,15 @@ def main():
         print(x)
     else:
         print("Finally finished!")
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     adj = ["red", "big", "tasty"]
     fruits = ["apple", "banana", "cherry"]
@@ -2187,9 +3007,14 @@ def main():
     for x in adj:
         for y in fruits:
             print(x, y)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
-## 13. User Input
+<!--nextpage-->
+## 14. User Input
 
 - Python 3.6 uses the `input()` method.
 - Python 2.7 uses the `raw_input()` method
@@ -2202,11 +3027,164 @@ def main():
 
 > Python stops executing when it comes to the `input()` function, and continues when the user has given some input.
 
-## 14. Exception handling
+<!--nextpage-->
+## 15. Exception handling
 
-## 15. Working with Files
+### 15.1. The basics about exceptions
 
-### 15.1. Syntax
+```python
+#!/usr/bin/env python3
+
+def main():
+    try:
+        print(x)
+    except:
+        print("An exception occurred")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+An exception occurred
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    try:
+        print(x)
+    except SystemError:
+        pass
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+Traceback (most recent call last):
+  File "/workspaces/learning-python/test1.py", line 11, in <module>
+    main()
+  File "/workspaces/learning-python/test1.py", line 5, in main
+    print(x)
+NameError: name 'x' is not defined
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    x = 1
+    try:
+        print(x)
+    except:
+        print("System Error")
+    else:
+        print("Everything fine")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+1
+Everything fine
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    try:
+        print(x)
+    except:
+        print("System Error")
+    finally:
+        print("The try-except works")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+System Error
+The try-except works
+```
+
+### 15.2. Raise an exception
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    x = 1
+    y = 0
+
+    if y == 0:
+        raise Exception("Sorry, can not divide by zero")
+    else:
+        print(x/y)
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+Traceback (most recent call last):
+  File "/workspaces/learning-python/test1.py", line 13, in <module>
+    main()
+  File "/workspaces/learning-python/test1.py", line 8, in main
+    raise Exception("Sorry, can not divide by zero")
+Exception: Sorry, can not divide by zero
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    x = 1
+    y = "zero"
+
+    if not type(y) is int:
+        raise TypeError("Only integers are allowed")
+    else:
+        if y == 0:
+            raise Exception("Sorry, can not divide by zero")
+        else:
+            print(x/y)
+
+if __name__ == "__main__":
+    main()
+```
+
+```shell
+Traceback (most recent call last):
+  File "/workspaces/learning-python/test1.py", line 16, in <module>
+    main()
+  File "/workspaces/learning-python/test1.py", line 8, in main
+    raise TypeError("Only integers are allowed")
+TypeError: Only integers are allowed
+```
+
+<!--nextpage-->
+## 16. Working with Files
+
+### 16.1. Syntax
 
 | Attribuut |  Mode  | Description                                                               |
 | :-------: | :----: | :------------------------------------------------------------------------ |
@@ -2227,7 +3205,7 @@ def main():
     f = open("demofile.txt", "rt")
 ```
 
-### 15.2. Reading files
+### 16.2. Reading files
 
 ```python
 def main():
@@ -2271,7 +3249,7 @@ def main():
         print(x)
 ```
 
-### 15.3. Closing
+### 16.3. Closing
 
 ```python
 def main():
@@ -2280,7 +3258,7 @@ def main():
     f.close()
 ```
 
-### 15.4. Writing files
+### 16.4. Writing files
 
 open and read the file after the appending:
 
@@ -2307,7 +3285,7 @@ def main():
     print(f.read())
 ```
 
-### 15.5. Create a new file
+### 16.5. Create a new file
 
 "x", "a", "w"
 
@@ -2321,7 +3299,7 @@ def main():
     f = open("myfile.txt", "w")
 ```
 
-### 15.6. Delete a file or folder
+### 16.6. Delete a file or folder
 
 ```python
 import os
@@ -2348,9 +3326,9 @@ def main():
 ```
 
 <!--nextpage-->
-## 16. Modules
+## 17. Modules
 
-### 16.1. Using a module
+### 17.1. Using a module
 
 Create a file called `mymodule.py` with the following
 
@@ -2368,7 +3346,7 @@ def main():
     mymodule.greeting("John")
 ```
 
-### 16.2. Using variable in modules
+### 17.2. Using variable in modules
 
 If we extent `mymodule.py` with the following
 
@@ -2396,7 +3374,7 @@ Output:
 42
 ```
 
-### 16.3. Import from a module
+### 17.3. Import from a module
 
 You can also import a certain section from a module
 
@@ -2407,7 +3385,7 @@ def main():
     print(person["age"])
 ```
 
-### 16.4. Rename a module
+### 17.4. Rename a module
 
 We can rename a module during import
 
@@ -2419,7 +3397,7 @@ def main():
     print(age)
 ```
 
-### 16.5. Built-in modules
+### 17.5. Built-in modules
 
 ```python
 import platform
@@ -2437,9 +3415,10 @@ def main():
     print(x)
 ```
 
-## 17. Classes
+<!--nextpage-->
+## 18. Classes
 
-### 17.1. Creating a class and object
+### 18.1. Creating a class and object
 
 ```python
 class MyClass:
@@ -2450,7 +3429,7 @@ def main():
     print(myboject.a)
 ```
 
-### 17.2. The constructor method
+### 18.2. The constructor method
 
 During the instantiation of a class the constructor method is called to initialize the object. In Python the method name `__init__` is reserved for this purpose.
 
@@ -2466,7 +3445,7 @@ print(person1.name)
 print(person1.age)
 ```
 
-### 17.3. Define an object method
+### 18.3. Define an object method
 
 Object methods are functions that belong to the object and operation withing the context of the current object.
 
@@ -2483,7 +3462,7 @@ person1 = Person("John", 42)
 person1.myfunc()
 ```
 
-### 17.4. The self parameter
+### 18.4. The self parameter
 
 The `self` parameter is a reference to the current instance of the class and has been specified in [PEP-8][arguments], but isn't a reserved keyword. The name of first argument can be anything you want.
 
@@ -2500,7 +3479,7 @@ person1 = Person("John", 42)
 person1.myfunc()
 ```
 
-### 17.5. Object actions
+### 18.5. Object actions
 
 Modify an object property
 
@@ -2520,7 +3499,7 @@ Delete an object
 del person1
 ```
 
-### 17.6. Inheritance
+### 18.6. Inheritance
 
 ```python
 class Person:
@@ -2575,11 +3554,176 @@ engineer1.myfunc()
 ```
 
 <!--nextpage-->
-## 18. PIP: Using packages and virtual environments
+## 19. Iterators
+
+An interator is an object that contains a countable number of values and can be interated upon. Every object which implements the interator protocol with methods `__iter__()` and `__next__()`.
+
+### 19.1. The basics about iterators
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    mytuple = ("red", "big", "tasty")
+    myit = iter(mytuple)
+
+    print(next(myit))
+    print(next(myit))
+    print(next(myit))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+```shell
+red
+big
+tasty
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    mystr = "red"
+    myit = iter(mystr)
+
+    print(next(myit))
+    print(next(myit))
+    print(next(myit))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+```shell
+r
+e
+d
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    mytuple = ("red", "big", "tasty")
+
+    for x in mytuple:
+        print(x)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+```shell
+red
+big
+tasty
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    mystr = "red"
+
+    for x in mystr:
+        print(x)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+```shell
+r
+e
+d
+```
+
+### 19.2. Creating an iterator
+
+```python
+#!/usr/bin/env python3
+
+class MyCounter:
+    def __iter__(self):
+        self.i = 1
+        return self
+
+    def __next__(self):
+        j = self.i
+        self.i += 1
+        return j
+
+
+def main():
+    mycounter = MyCounter()
+    myit = iter(mycounter)
+
+    print(next(myit))
+    print(next(myit))
+    print(next(myit))
+    print(next(myit))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+```shell
+1
+2
+3
+4
+```
+
+```python
+#!/usr/bin/env python3
+
+class MyCounter:
+    def __iter__(self):
+        self.i = 1
+        return self
+
+    def __next__(self):
+        if self.i <= 5:
+            j = self.i
+            self.i += 1
+            return j
+        else:
+            raise StopIteration
+
+
+def main():
+    mycounter = MyCounter()
+    myit = iter(mycounter)
+
+    for x in myit:
+        print(x)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+```shell
+1
+2
+3
+4
+5
+```
+
+<!--nextpage-->
+## 20. PIP: Using packages and virtual environments
 
 PIP is a package manager for Python for packages or modules
 
-### 18.1. Create and start the virtual environment
+### 20.1. Create and start the virtual environment
 
 First we create virtual environment
 
@@ -2602,7 +3746,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-### 18.2. Managing packages with pip
+### 20.2. Managing packages with pip
 
 Since Python 3.4, Pip is installed by default en
 
@@ -2677,7 +3821,7 @@ pip        20.2.2
 setuptools 49.1.3
 ```
 
-### 18.3. Install all dependencies
+### 20.3. Install all dependencies
 
 ```shell
 (.venv) $ pip freeze > requirements.txt
