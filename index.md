@@ -27,7 +27,7 @@ toc: true
   - [6.6. Convert your string to upper or lower case](#66-convert-your-string-to-upper-or-lower-case)
   - [6.7. Trim a string](#67-trim-a-string)
   - [6.8. Replacing a string](#68-replacing-a-string)
-  - [6.9. Split a string](#69-split-a-string)
+  - [6.9. Split and join](#69-split-and-join)
   - [6.10. Formatting strings](#610-formatting-strings)
   - [6.11. Escape characters](#611-escape-characters)
 - [7. Numbers](#7-numbers)
@@ -41,6 +41,7 @@ toc: true
   - [8.1. The basics about booleans](#81-the-basics-about-booleans)
   - [8.2. Some values are false](#82-some-values-are-false)
   - [8.3. Functions can also return a boolean](#83-functions-can-also-return-a-boolean)
+  - [8.4. Boolean operators basics](#84-boolean-operators-basics)
 - [9. Operators](#9-operators)
   - [9.1. Arithmetic operators](#91-arithmetic-operators)
   - [9.2. Comparison operators](#92-comparison-operators)
@@ -49,6 +50,7 @@ toc: true
   - [9.5. Membership operators](#95-membership-operators)
   - [9.6. Bitwise operators](#96-bitwise-operators)
   - [9.7. Assignment operators](#97-assignment-operators)
+  - [9.8. Operator Precedence](#98-operator-precedence)
 - [10. Python Collections](#10-python-collections)
   - [10.1. Lists](#101-lists)
   - [10.2. Tuples](#102-tuples)
@@ -338,9 +340,15 @@ No programs works without variables to store data values in while the program ru
 Let start with basic example based on our `Hello World.` application where we have two lines. And in this example we still present print directly with a string telling about two people called John and their age.
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     print("My name is John and I am 42.")
     print("My name is John and I am also 42.")
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Output:
@@ -353,11 +361,17 @@ My name is John and I am also 42
 Lets put the name and age both in their own variable as a string and update the strings to concatenate the whole string together. Here we that Python used the `+`-sign to concatenate strings together.
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     name = "John"
     age = "42"
     print("My name is " + name + " and I am " + age + ".")
     print("My name is " + name + " and I am also " + age + ".")
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Output:
@@ -368,12 +382,18 @@ My name is John and I am also 42
 ```
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     name = "John"
     age = "42"
     print("My name is " + name + " and I am " + age + ".")
     name = "Jack"
     print("My name is " + name + " and I am also " + age + ".")
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Output:
@@ -402,10 +422,16 @@ Python has the following data types built-in by default, in these categories:
 Python is flexible with its data types for variables, but Python does require type casting in some cases. Using a variable that contains a number that needs to concatenated with a string needs to be casted from an integer to a string. In the example below we forget to type cast a string and it fails.
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     name = "John"
     age = 42
     print("My name is " + name + " and I am " + age + ".")
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Output:
@@ -422,10 +448,16 @@ TypeError: can only concatenate str (not "int") to str
 If we type cast the variable `age` from integer to string with the `str()` function it works perfectly. Other functions to type cast are `int()` and `float()`.
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     name = "John"
     age = 42
     print("My name is " + name + " and I am " + str(age) + ".")
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ### 5.4. Getting a variable type
@@ -433,11 +465,17 @@ def main():
 Python can also determine the data type of a variable with `type()`. This can become useful when importing data from unknown source and needs validation.
 
 ```python
+#!/usr/bin/env python3
+
 def main():
     name = "John"
     age = 42
     print(type(name))
     print(type(age))
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 Output:
@@ -771,6 +809,12 @@ if __name__ == "__main__":
     main()
 ```
 
+Output:
+
+```shell
+llo
+```
+
 ```python
 #!/usr/bin/env python3
 
@@ -781,6 +825,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
+Output:
+
+```shell
+Hello
 ```
 
 ```python
@@ -795,6 +845,12 @@ if __name__ == "__main__":
     main()
 ```
 
+Output:
+
+```shell
+llo World.
+```
+
 ```python
 #!/usr/bin/env python3
 
@@ -805,6 +861,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
+Output:
+
+```shell
+orl
 ```
 
 ### 6.6. Convert your string to upper or lower case
@@ -903,7 +965,13 @@ if __name__ == "__main__":
     main()
 ```
 
-### 6.9. Split a string
+Output:
+
+```shell
+Hello world.
+```
+
+### 6.9. Split and join
 
 ```python
 #!/usr/bin/env python3
@@ -917,7 +985,49 @@ if __name__ == "__main__":
     main()
 ```
 
-`join`
+Output:
+
+```shell
+['Hello', 'World.']
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    phrases = ["Hello", "World."]
+    separator = " "
+    print(separator.join(phrases))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+Hello World.
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    phrases = {"wordOne": "Hello", "wordTwo": "World."}
+    separator = "-"
+    print(separator.join(phrases))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Output:
+
+```shell
+wordOne-wordTwo
+```
 
 ### 6.10. Formatting strings
 
@@ -954,6 +1064,12 @@ if __name__ == "__main__":
     main()
 ```
 
+Output:
+
+```shell
+Hello Jack and John.
+```
+
 ```python
 #!/usr/bin/env python3
 
@@ -966,6 +1082,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
+Output:
+
+```shell
+Hello John and Jack.
 ```
 
 ### 6.11. Escape characters
@@ -982,6 +1104,15 @@ if __name__ == "__main__":
     main()
 ```
 
+Output:
+
+```shell
+  File "/workspaces/learning-python/example.py", line 4
+    phrase_one = "Hello "World"."
+                         ^
+SyntaxError: invalid syntax
+```
+
 ```python
 #!/usr/bin/env python3
 
@@ -992,6 +1123,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
+Output:
+
+```shell
+Hello "World".
 ```
 
 | Code  | Result          |
@@ -1300,10 +1437,48 @@ Output:
 True
 ```
 
+### 8.4. Boolean operators basics
+
+AND
+
+| Value A | Value B | Result |
+| :-----: | :-----: | :----: |
+|    0    |    0    |   0    |
+|    0    |    1    |   0    |
+|    1    |    0    |   0    |
+|    1    |    1    |   1    |
+
+OR
+
+| Value A | Value B | Result |
+| :-----: | :-----: | :----: |
+|    0    |    0    |   0    |
+|    0    |    1    |   1    |
+|    1    |    0    |   1    |
+|    1    |    1    |   1    |
+
+XOR
+
+| Value A | Value B | Result |
+| :-----: | :-----: | :----: |
+|    0    |    0    |   0    |
+|    0    |    1    |   1    |
+|    1    |    0    |   1    |
+|    1    |    1    |   1    |
+
+NOT
+
+| Value A | Result |
+| :-----: | :----: |
+|    0    |   1    |
+|    1    |   0    |
+
 <!--nextpage-->
 ## 9. Operators
 
 ### 9.1. Arithmetic operators
+
+Unary operators
 
 | Operator | Name           | Example |
 | :------: | :------------- | :------ |
@@ -1350,14 +1525,109 @@ True
 
 ### 9.6. Bitwise operators
 
-| Operator | Name                 | Description                                                                                             |
-| :------: | :------------------- | :------------------------------------------------------------------------------------------------------ |
-|    &     | AND                  | Sets each bit to 1 if both bits are 1                                                                   |
-|    \|    | OR                   | Sets each bit to 1 if one of two bits is 1                                                              |
-|    ^     | XOR                  | Sets each bit to 1 if only one of two bits is 1                                                         |
-|    ~     | NOT                  | Inverts all the bits                                                                                    |
+A Bitwise operator operates on a bit string, a bit array or binary numeral and are basic actions that can directly be done by the processor itself. The processor uses the basic [boolean operators](#84-boolean-operators-basics) on bit level and can shift the bit string.
+
+| Operator |         Name         | Description                                                                                             |
+| :------: | :------------------: | :------------------------------------------------------------------------------------------------------ |
+|    &     |         AND          | Sets each bit to 1 if both bits are 1                                                                   |
+|    \|    |          OR          | Sets each bit to 1 if one of two bits is 1                                                              |
+|    ^     |         XOR          | Sets each bit to 1 if only one of two bits is 1                                                         |
+|    ~     |         NOT          | Inverts all the bits                                                                                    |
 |    <<    | Zero fill left shift | Shift left by pushing zeros in from the right and let the leftmost bits fall off                        |
-|    >>    | Signed right shift   | Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off |
+|    >>    |  Signed right shift  | Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off |
+
+The first example is applying **AND** on two signed integers. The processor converts the integers to bit strings and then applies the **AND**-table to every position between the two string. For `3 & 4` the result is `0` as there are no overlapping bits between the two integers. For `3 & 7` the result is `3` as the bits for number 3 are also in number 7 and will result matching number 3.
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    # 3 = 0000 0011
+    # 4 = 0000 0100 AND
+    # 0 = 0000 0000
+    print(3 & 4)
+    # 3 = 0000 0011
+    # 7 = 0000 0111 AND
+    # 3 = 0000 0011
+    print(3 & 7)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+The next example is applying **OR** on two signed integers. The processor converts the integers to bit strings and then applies the **OR**-table to every position between the two string. For `3 | 4` the result is `7` as all bits that are `1` will end up in the result. For `3 | 7` the result is also `7` as the bits for number 3 are also in number 7 and will result matching number 7.
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    # 3 = 0000 0011
+    # 4 = 0000 0100 OR
+    # 7 = 0000 0111
+    print(3 | 4)
+    # 3 = 0000 0011
+    # 7 = 0000 0111 OR
+    # 7 = 0000 0111
+    print(3 | 7)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+The next example is applying **XOR** on two signed integers. The processor converts the integers to bit strings and then applies the **XOR**-table to every position between the two string. For `3 | 4` the result is `7` as all bits that are `1` will end up in the result. For `3 | 7` the result is also `7` as the bits for number 3 are also in number 7 and will result matching number 7.
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    # 3 = 0000 0011
+    # 4 = 0000 0100 XOR
+    # 7 = 0000 0111
+    print(3 ^ 4)
+    # 3 = 0000 0011
+    # 7 = 0000 0111 XOR
+    # 4 = 0000 0100
+    print(3 ^ 7)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    #     3 = 0000 0011 NOT
+    #    -4 = 1111 1100
+    print(~3)
+    #  127 = 0111 1111 NOT
+    # -128 = 1000 0000
+    print(~127)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+```python
+#!/usr/bin/env python3
+
+def main():
+    # 3 = 0000 0011 SHIFT RIGHT 1
+    # 1 = 0000 0001
+    print(3 >> 1)
+    # Shift left
+    # 3 = 0000 0011 SHIFT LEFT 1
+    # 6 = 0000 0110
+    print(3 << 1)
+
+
+if __name__ == "__main__":
+    main()
+```
 
 ### 9.7. Assignment operators
 
@@ -1376,6 +1646,34 @@ True
 |    ^=    | Bitwise XOR               | x ^= 2  | x = x ^ 2  |
 |   >>=    | Bitwise Shift Left        | x >>= 2 | x = x >> 2 |
 |   <<=    | Bitwise Shift Right       | x <<= 2 | x = x << 2 |
+
+### 9.8. Operator Precedence
+
+- Highest precedence at top, lowest at bottom.
+- Operators in the same box evaluate left to right.
+
+|                      Operator                      | Description                         |
+| :------------------------------------------------: | :---------------------------------- |
+|                         ()                         | Parentheses (grouping)              |
+|                     f(args...)                     | Function call                       |
+|                   x[index:index]                   | Slicing                             |
+|                      x[index]                      | Subscription                        |
+|                    x.attribute                     | Attribute reference                 |
+|                         **                         | Exponentiation                      |
+|                         ~x                         | Bitwise not                         |
+|                       +x, -x                       | Positive, negative                  |
+|                      *, /, %                       | Multiplication, division, remainder |
+|                        +, -                        | Addition, subtraction               |
+|                       <<, >>                       | Bitwise shifts                      |
+|                         &                          | Bitwise AND                         |
+|                         ^                          | Bitwise XOR                         |
+|                         \|                         | Bitwise OR                          |
+| in, not in, is, is not, <, <=,  >,  >=, <>, !=, == | Comparisons, membership, identity   |
+|                       not x                        | Boolean NOT                         |
+|                        and                         | Boolean AND                         |
+|                         or                         | Boolean OR                          |
+|                       lambda                       | Lambda expression                   |
+
 
 <!--nextpage-->
 ## 10. Python Collections
