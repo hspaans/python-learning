@@ -1674,7 +1674,6 @@ if __name__ == "__main__":
 |                         or                         | Boolean OR                          |
 |                       lambda                       | Lambda expression                   |
 
-
 <!--nextpage-->
 ## 10. Python Collections
 
