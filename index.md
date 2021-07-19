@@ -65,8 +65,11 @@ toc: true
   - [11.5. Shorthand and Conditional Expressions](#115-shorthand-and-conditional-expressions)
 - [12. Using Functions](#12-using-functions)
   - [12.1. The basics about functions](#121-the-basics-about-functions)
-  - [12.2. Introduction to Lambda](#122-introduction-to-lambda)
-  - [12.3. Using Lambda functions](#123-using-lambda-functions)
+  - [12.2. Passing multiple arguments](#122-passing-multiple-arguments)
+  - [12.3. Using yield instead of return](#123-using-yield-instead-of-return)
+  - [12.4. Map, Filter and Reduce](#124-map-filter-and-reduce)
+  - [12.5. Introduction to Lambda](#125-introduction-to-lambda)
+  - [12.6. Using Lambda functions](#126-using-lambda-functions)
 - [13. Loops](#13-loops)
   - [13.1. While loop](#131-while-loop)
   - [13.2. For loop](#132-for-loop)
@@ -94,13 +97,25 @@ toc: true
   - [18.4. The self parameter](#184-the-self-parameter)
   - [18.5. Object actions](#185-object-actions)
   - [18.6. Inheritance](#186-inheritance)
+  - [18.7. Magic methods](#187-magic-methods)
 - [19. Iterators](#19-iterators)
   - [19.1. The basics about iterators](#191-the-basics-about-iterators)
   - [19.2. Creating an iterator](#192-creating-an-iterator)
-- [20. PIP: Using packages and virtual environments](#20-pip-using-packages-and-virtual-environments)
-  - [20.1. Create and start the virtual environment](#201-create-and-start-the-virtual-environment)
-  - [20.2. Managing packages with pip](#202-managing-packages-with-pip)
-  - [20.3. Install all dependencies](#203-install-all-dependencies)
+- [20. JSON](#20-json)
+- [21. Regular Expressions](#21-regular-expressions)
+  - [21.1. The basics about Regular Expressions](#211-the-basics-about-regular-expressions)
+  - [21.2. Metacharacters](#212-metacharacters)
+  - [21.3. Special Sequences](#213-special-sequences)
+  - [21.4. Sets](#214-sets)
+  - [21.5. findall()](#215-findall)
+  - [21.6. search()](#216-search)
+  - [21.7. split()](#217-split)
+  - [21.8. sub()](#218-sub)
+  - [21.9. matching](#219-matching)
+- [22. PIP: Using packages and virtual environments](#22-pip-using-packages-and-virtual-environments)
+  - [22.1. Create and start the virtual environment](#221-create-and-start-the-virtual-environment)
+  - [22.2. Managing packages with pip](#222-managing-packages-with-pip)
+  - [22.3. Install all dependencies](#223-install-all-dependencies)
 
 ## 1. Introduction
 
@@ -1464,7 +1479,7 @@ XOR
 |    0    |    0    |   0    |
 |    0    |    1    |   1    |
 |    1    |    0    |   1    |
-|    1    |    1    |   1    |
+|    1    |    1    |   0    |
 
 NOT
 
@@ -2985,10 +3000,7 @@ print("A") if a > b else print("=") if a == b else print("B")
 
 ### 12.1. The basics about functions
 
-```python
-def my_function():
-    print("Hello from a function")
-```
+Defining and calling a function
 
 ```python
 def my_function():
@@ -2998,6 +3010,8 @@ def my_function():
 def main():
     my_function()
 ```
+
+Calling a function multiple time and scope of the variables
 
 ```python
 def my_function(fname):
@@ -3010,6 +3024,8 @@ def main():
     my_function("Linus")
 ```
 
+Using return
+
 ```python
 def my_function(x):
     return 5 * x
@@ -3020,6 +3036,8 @@ def main():
     print(my_function(5))
     print(my_function(9))
 ```
+
+Default values
 
 ```python
 def my_function(country = "Norway"):
@@ -3033,7 +3051,89 @@ def main():
     my_function("Brazil")
 ```
 
-### 12.2. Introduction to Lambda
+### 12.2. Passing multiple arguments
+
+Index based with `*args`
+
+```python
+def my_function(*kids):
+    print("The youngest child is " + kids[2])
+
+def main():
+    my_function("Emil", "Tobias", "Linus")
+```
+
+Keyword based with `**kwargs`
+
+```python
+def my_function(**kid):
+    print("His last name is " + kid["lname"])
+
+def main():
+    my_function(fname = "Tobias", lname = "Refsnes")
+```
+
+### 12.3. Using yield instead of return
+
+```python
+def multi_yield():
+    yield_str = "This will print the first string"
+    yield yield_str
+    yield_str = "This will print the second string"
+    yield yield_str
+
+def main():
+    multi_obj = multi_yield()
+    print(next(multi_obj))
+    print(next(multi_obj))
+    print(next(multi_obj))
+```
+
+### 12.4. Map, Filter and Reduce
+
+The `map()` function executes a specified function for each item in an iterable. The item is sent to the function as a parameter.
+
+```python
+def my_function(n):
+    return len(n)
+
+def main():
+    x = map(my_function, ('apple', 'banana', 'cherry'))
+    prin(x)
+    print(list(x))
+```
+
+The `filter()` function returns an iterator were the items are filtered through a function to test if the item is accepted or not.
+
+```python
+def my_function(x):
+    if x < 18:
+        return False
+    else:
+        return True
+
+def main():
+    ages = [5, 12, 17, 18, 24, 32]
+    adults = filter(my_function, ages)
+    print(list(adults))
+```
+
+The `functools.reduce()`
+
+```python
+from functools import reduce
+
+def my_function(a, b):
+    result = a + b
+    print(f"{a} + {b} = {result}")
+    return result
+
+def main():
+numbers = [0, 1, 2, 3, 4]
+reduce(my_function, numbers)
+```
+
+### 12.5. Introduction to Lambda
 
 A lambda function is an anonymous function
 
@@ -3079,7 +3179,7 @@ Output:
 5
 ```
 
-### 12.3. Using Lambda functions
+### 12.6. Using Lambda functions
 
 ```python
 #!/usr/bin/env python3
@@ -3850,6 +3950,73 @@ engineer1 = Engineer("John", 42, "Electronics")
 engineer1.myfunc()
 ```
 
+### 18.7. Magic methods
+
+```python
+class Memory:
+
+    def __init__(self, size: int = 65536) -> None:
+        self.size = size
+        self.memory = [0] * self.size
+        for i in range(self.size):
+            self.memory[i] = 0x00
+
+    def get(self, address: int) -> int:
+        return self.memory[address]
+
+    def set(self, address: int, value: int) -> int:
+        self.memory[address] = value
+        return self.memory[address]
+
+memory = Memory()
+memory.set(1, 2)
+```
+
+```python
+class Memory:
+
+    def __init__(self, size: int = 65536) -> None:
+        self.size = size
+        self.memory = [0] * self.size
+        for i in range(self.size):
+            self.memory[i] = 0x00
+
+    def __getitem__(self, address: int) -> int:
+        return self.memory[address]
+
+    def __setitem__(self, address: int, value: int) -> int:
+        self.memory[address] = value
+        return self.memory[address]
+
+memory = Memory()
+memory[1] = 2
+```
+
+|             Magic Method             | When it gets invoked (example)    | Explanation                                  |
+| :----------------------------------: | :-------------------------------- | :------------------------------------------- |
+|       \_\_new \_\_(cls [,...])       | instance = MyClass(arg1, arg2)    | \_\_new \_\_ is called on instance creation  |
+|      \_\_init \_\_(self [,...])      | instance = MyClass(arg1, arg2)    | \_\_init \_\_ is called on instance creation |
+|      \_\_cmp \_\_(self, other)       | self == other, self > other, etc. | Called for any comparison                    |
+|          \_\_pos \_\_(self)          | +self                             | Unary plus sign                              |
+|          \_\_neg \_\_(self)          | -self                             | Unary minus sign                             |
+|        \_\_invert \_\_(self)         | ~self                             | Bitwise inversion                            |
+|         \_\_index \_\_(self)         | x[self]                           | Conversion when object is used as index      |
+|        \_\_nonzero \_\_(self)        | bool(self)                        | Boolean value of the object                  |
+|     \_\_getattr \_\_(self, name)     | self.name # name doesn't exist    | Accessing nonexistent attribute              |
+|  \_\_setattr \_\_(self, name, val)   | self.name = val                   | Assigning to an attribute                    |
+|     \_\_delattr \_\_(self, name)     | del self.name                     | Deleting an attribute                        |
+|  \_\_getattribute \_\_(self, name)   | self.name                         | Accessing any attribute                      |
+|     \_\_getitem \_\_(self, key)      | self[key]                         | Accessing an item using an index             |
+|   \_\_setitem \_\_(self, key, val)   | self[key] = val                   | Assigning to an item using an index          |
+|     \_\_delitem \_\_(self, key)      | del self[key]                     | Deleting an item using an index              |
+|         \_\_iter \_\_(self)          | for x in self                     | Iteration                                    |
+|    \_\_contains \_\_(self, value)    | value in self, value not in self  | Membership tests using in                    |
+|      \_\_call \_\_(self [,...])      | self(args)                        | "Calling" an instance                        |
+|         \_\_enter \_\_(self)         | with self as x:                   | with statement context managers              |
+| \_\_exit \_\_(self, exc, val, trace) | with self as x:                   | with statement context managers              |
+|       \_\_getstate \_\_(self)        | pickle.dump(pkl_file, self)       | Pickling                                     |
+|       \_\_setstate \_\_(self)        | data = pickle.load(pkl_file)      | Pickling                                     |
+
 <!--nextpage-->
 ## 19. Iterators
 
@@ -4016,11 +4183,237 @@ if __name__ == "__main__":
 ```
 
 <!--nextpage-->
-## 20. PIP: Using packages and virtual environments
+## 20. JSON
+
+<!--nextpage-->
+## 21. Regular Expressions
+
+### 21.1. The basics about Regular Expressions
+
+```python
+#!/usr/bin/env python3
+
+import re
+
+def main():
+    txt = "The rain in Spain"
+    x = re.search("^The.*Spain$", txt)
+    if x:
+        print("YES! We have a match!")
+    else:
+        print("No match")
+
+if __name__ == "__main__":
+    main()
+```
+
+### 21.2. Metacharacters
+
+| Character | Description                                                                |     Example     |
+| :-------: | :------------------------------------------------------------------------- | :-------------: |
+|    []     | A set of characters                                                        |     "[a-m]"     |
+|     \     | Signals a special sequence (can also be used to escape special characters) |      "\d"       |
+|     .     | Any character (except newline character)                                   |     "he..o"     |
+|     ^     | Starts with                                                                |    "^hello"     |
+|     $     | Ends with                                                                  |    "world$"     |
+|     *     | Zero or more occurrences                                                   |     "aix*"      |
+|     +     | One or more occurrences                                                    |     "aix+"      |
+|    {}     | Exactly the specified number of occurrences                                |     "al{2}"     |
+|    \|     | Either or                                                                  | "falls \|stays" |
+|    ()     | Capture and group                                                          |                 |
+
+### 21.3. Special Sequences
+
+| Character | Description                                                                                                                                                                                                 | Example           |
+| :-------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------- |
+|    \A     | Returns a match if the specified characters are at the beginning of the string                                                                                                                              | "\AThe"           |
+|    \b     | Returns a match where the specified characters are at the beginning or at the end of a word(the "r" in the beginning is making sure that the string is being treated as a "raw string")                     | r"\bain" r"ain\b" |
+|    \B     | Returns a match where the specified characters are present, but NOT at the beginning (or at the end) of a word (the "r" in the beginning is making sure that the string is being treated as a "raw string") | r"\Bain" r"ain\B" |
+|    \d     | Returns a match where the string contains digits (numbers from 0-9)                                                                                                                                         | "\d"              |
+|    \D     | Returns a match where the string DOES NOT contain digits                                                                                                                                                    | "\D"              |
+|    \s     | Returns a match where the string contains a white space character                                                                                                                                           | "\s"              |
+|    \S     | Returns a match where the string DOES NOT contain a white space character                                                                                                                                   | "\S"              |
+|    \w     | Returns a match where the string contains any word characters (characters from a to Z, digits from 0-9, and the underscore _ character)                                                                     | "\w"              |
+|    \W     | Returns a match where the string DOES NOT contain any word characters                                                                                                                                       | "\W"              |
+|    \Z     | Returns a match if the specified characters are at the end of the string                                                                                                                                    | "Spain\Z"         |
+
+### 21.4. Sets
+
+|    Set     | Description                                                                                                            |
+| :--------: | :--------------------------------------------------------------------------------------------------------------------- |
+|   [arn]    | Returns a match where one of the specified characters (a, r, or n) are present                                         |
+|   [a-n]    | Returns a match for any lower case character, alphabetically between a and n                                           |
+|   [^arn]   | Returns a match for any character EXCEPT a, r, and n                                                                   |
+|   [0123]   | Returns a match where any of the specified digits (0, 1, 2, or 3) are present                                          |
+|   [0-9]    | Returns a match for any digit between 0 and 9                                                                          |
+| [0-5][0-9] | Returns a match for any two-digit numbers from 00 and 59                                                               |
+|  [a-zA-Z]  | Returns a match for any character alphabetically between a and z, lower case OR upper case                             |
+|    [+]     | In sets, +, *, .,  \|, (), $,{} has no special meaning, so [+] means: return a match for any + character in the string |
+
+```python
+#!/usr/bin/env python3
+
+import re
+
+def main():
+    txt = "The rain in Spain"
+    x = re.findall("[arn]", txt)
+    print(x)
+
+if __name__ == "__main__":
+    main()
+```
+
+### 21.5. findall()
+
+```python
+#!/usr/bin/env python3
+
+import re
+
+def main():
+    txt = "The rain in Spain"
+    x = re.findall("ai", txt)
+    print(x)
+
+if __name__ == "__main__":
+    main()
+```
+
+### 21.6. search()
+
+```python
+#!/usr/bin/env python3
+
+import re
+
+def main():
+    txt = "The rain in Spain"
+    x = re.search("\s", txt)
+    print("The first white-space character is located in position:", x.start())
+
+if __name__ == "__main__":
+    main()
+```
+
+### 21.7. split()
+
+```python
+#!/usr/bin/env python3
+
+import re
+
+def main():
+    txt = "The rain in Spain"
+    x = re.split("\s", txt)
+    print(x)
+
+if __name__ == "__main__":
+    main()
+```
+
+### 21.8. sub()
+
+```python
+#!/usr/bin/env python3
+
+import re
+
+def main():
+    txt = "The rain in Spain"
+    x = re.sub("\s", "9", txt)
+    print(x)
+
+if __name__ == "__main__":
+    main()
+```
+
+```python
+#!/usr/bin/env python3
+
+import re
+
+def main():
+    txt = "The rain in Spain"
+    x = re.sub("\s", "9", txt, 2)
+    print(x)
+
+if __name__ == "__main__":
+    main()
+```
+
+### 21.9. matching
+
+```python
+#!/usr/bin/env python3
+
+import re
+
+def main():
+    txt = "The rain in Spain"
+    x = re.search("ai", txt)
+    print(x)
+
+if __name__ == "__main__":
+    main()
+```
+
+> Note: If there is no match, the value None will be returned, instead of the Match Object.
+
+The Match object has properties and methods used to retrieve information about the search, and the result:
+
+- `.span()` returns a tuple containing the start-, and end positions of the match.
+- `.string` returns the string passed into the function
+- `.group()` returns the part of the string where there was a match
+
+```python
+#!/usr/bin/env python3
+
+import re
+
+def main():
+    txt = "The rain in Spain"
+    x = re.search(r"\bS\w+", txt)
+    print(x.span())
+
+if __name__ == "__main__":
+    main()
+```
+
+```python
+#!/usr/bin/env python3
+
+import re
+
+def main():
+    txt = "The rain in Spain"
+    x = re.search(r"\bS\w+", txt)
+    print(x.string())
+
+if __name__ == "__main__":
+    main()
+```
+
+```python
+#!/usr/bin/env python3
+
+import re
+
+def main():
+    txt = "The rain in Spain"
+    x = re.search(r"\bS\w+", txt)
+    print(x.group())
+
+if __name__ == "__main__":
+    main()
+```
+
+<!--nextpage-->
+## 22. PIP: Using packages and virtual environments
 
 PIP is a package manager for Python for packages or modules
 
-### 20.1. Create and start the virtual environment
+### 22.1. Create and start the virtual environment
 
 First we create virtual environment
 
@@ -4043,7 +4436,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-### 20.2. Managing packages with pip
+### 22.2. Managing packages with pip
 
 Since Python 3.4, Pip is installed by default en
 
@@ -4118,7 +4511,7 @@ pip        20.2.2
 setuptools 49.1.3
 ```
 
-### 20.3. Install all dependencies
+### 22.3. Install all dependencies
 
 ```shell
 (.venv) $ pip freeze > requirements.txt
